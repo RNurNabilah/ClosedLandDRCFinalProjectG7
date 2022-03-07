@@ -22,67 +22,110 @@ chartJS.register(
 );
 
 const LineChart = () => {
-  const [chart, setChart] = useState({});
-  var baseUrl = "https://api.coinranking.com/v2/coins/?limit=100";
-  var proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-  
-  useEffect(() => {
-    const fetchCoins = async () => {
-      await fetch(`${proxyUrl}${baseUrl}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "x-access-token": `${apiKey}`,
-          "Access-Control-Allow-Origin": "*",
-        },
-      })
-        .then((response) => {
-          if (response.ok) {
-            response.json().then((json) => {
-              console.log(json.data);
-              setChart(json.data);
-            });
-          }
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-    fetchCoins();
-  }, [baseUrl, proxyUrl, apiKey]);
+  // const [ethTick, setEthTick] = useState([]);
+  // const [chartData, setChartData] = useState([]);
+  // const [time, setTime] = useState(0);
+  // let arr = [];
+  // let quotes = [];
 
-  console.log("chart", chart);
-  var data = {
-    labels: chart?.coins?.map((x) => x.name),
+  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
+
+  // useEffect(() => {
+  //   ws.onopen = function (evt) {
+  //     ws.send(JSON.stringify({ ticks: "frxXAUUSD" }));
+  //   };
+
+  //   ws.onmessage = function (msg) {
+  //     let msgData = JSON.parse(msg.data);
+  //     quotes.push(msgData.tick);
+  //     setChartData(
+  //       chartData.push({
+  //         epoch: new Date(
+  //           quotes[quotes.length - 1].epoch * 1000
+  //         ).toLocaleTimeString(),
+  //         price: quotes[quotes.length - 1].quote,
+  //       })
+  //     );
+  //     setEthTick(chartData);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(ethTick);
+  // }, [ethTick]);
+
+  const data = [];
+  let quoteprice = []; //x-axis
+  // let quotepoch = [];
+
+  const [chartdata, setChartData] = useState([]);
+  const [quoteEpoch, setQuoteEpoch] = useState([]);
+
+  useEffect(() => {
+    ws.onopen = function (evt) {
+      ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+    };
+    //Fired when a connection with WebSocket is opened.
+    ws.onmessage = function (evt) {
+      const parsedData = JSON.parse(evt.data);
+      const comObject = parsedData.tick;
+
+      data.push(comObject);
+
+      setQuoteEpoch(
+        quoteEpoch.push({
+          QuotePrice: data[data.length - 1].quote,
+          Epoch: new Date(
+            data[data.length - 1].epoch * 1000
+          ).toLocaleTimeString(),
+        })
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    setChartData(quoteEpoch);
+  }, [chartdata]);
+  // console.log(chartdata[0]);
+
+  let epoch = chartdata.map((data) => data.Epoch);
+  let quote = chartdata.map((data) => data.QuotePrice);
+
+  let dataChart = {
+    labels: epoch,
     datasets: [
       {
-        label: `${chart?.coins?.length} Coins Available`,
-        data: chart?.coins?.map((x) => x.price),
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
+        label: "ETH Price",
+        data: quote,
+        fill: false,
+        fillcolor: "rgba(75,192,192,0.1)",
+        lineTension: 0.1,
+        backgroundColor: "rgba(75,192,192,0.4)",
+        borderColor: "rgba(75,192,192,1)",
+        // borderCapStyle: "butt",
+        // borderDash: [],
+        // borderDashOffset: 0.0,
+        // borderJoinStyle: "miter",
+        // pointBorderColor: "rgba(75,192,192,1)",
+        // pointBackgroundColor: "#fff",
+        // pointBorderWidth: 1,
+        // pointHoverRadius: 5,
+        // pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        // pointHoverBorderColor: "rgba(220,220,220,1)",
+        // pointHoverBorderWidth: 2,
+        // pointRadius: 1,
+        // pointHitRadius: 10,
       },
     ],
   };
 
-  var options = {
+  let options = {
     maintainAspectRatio: false,
-    scales: {},
+    scales: {
+      xAxis: {
+        min: epoch[epoch.length - 10],
+      },
+    },
     legend: {
       labels: {
         fontSize: 100,
@@ -92,7 +135,7 @@ const LineChart = () => {
 
   return (
     <div>
-      <Line data={data} height={400} options={options} />
+      <Line data={dataChart} height={400} options={options} />
     </div>
   );
 };

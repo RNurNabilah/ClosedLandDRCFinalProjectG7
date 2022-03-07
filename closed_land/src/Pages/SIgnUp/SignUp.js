@@ -1,31 +1,47 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
-import Navbar from "../../Components/Navbar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { Container } from "react-bootstrap";
 import "./signup.css";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  let navigate = useNavigate();
+
+  function navSignIn() {
+    navigate("/signin");
+  }
+
   return (
     <div>
-    <Navbar/>
-      <div className='main-container'>
-        <h1 className='title'>SIGN UP</h1>
-        <div className='sub-container'>
-          <Container className='rectangle1'>
-            <img className='nft2' src={APE} alt="png"/>
-            </Container>
-              <Container className='rectangle2'>
-                  <div className='outer-button'>
-                    <button className='button-signin'>SIGN IN</button>
-                    <button className='button-signup'>SIGN UP</button>
-                  </div>
-                    <Form>
-                      <Form.Group className="usernames" controlId="formBasicUsername">
-                        <Form.Label> Username</Form.Label>
-                        <Form.Control type="textfield" placeholder="Enter your username"/>
-                      </Form.Group>
+      <Ethcall />
+      {/* <Navbar /> */}
+      <div className="main-container">
+        <h1 className="title animate__animated animate__fadeIn">SIGN UP</h1>
+        <div className="sub-container">
+          <div className="rectangle1 animate__animated animate__slideInLeft">
+            <img className="nft2" src={APE} alt="png" />
+          </div>
+          <div className="rectangle2 animate__animated animate__slideInRight">
+            <div className="outer-button">
+              <button className="button-signin" onClick={navSignIn}>
+                SIGN IN
+              </button>
+              <button className="button-signup" disabled>
+                SIGN UP
+              </button>
+            </div>
+            <Form>
+              <Form.Group className="usernames" controlId="formBasicUsername">
+                <Form.Label> Username</Form.Label>
+                <Form.Control
+                  type="textfield"
+                  placeholder="Enter your username"
+                />
+              </Form.Group>
 
               <Form.Group className="email1" controlId="formBasicEmail">
                 <Form.Label> Email</Form.Label>
@@ -51,7 +67,7 @@ const SignUp = () => {
                 <button className="signup-button">SIGN UP</button>
               </div>
             </Form>
-          </Container>
+          </div>
         </div>
       </div>
       <Footer></Footer>

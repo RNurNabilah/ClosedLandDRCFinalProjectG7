@@ -39,7 +39,12 @@ const Cards = (props) => {
             >
               {props.collection}
             </CardTitle>
-            <CardContent>
+            <CardContent
+              style={{
+                textAlignLast: "left",
+                paddingLeft: "3px",
+              }}
+            >
               Ratings:{" "}
               <span
                 style={{

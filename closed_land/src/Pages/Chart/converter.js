@@ -1,29 +1,95 @@
-import React from "react";
-import { BsArrowLeftRight } from "react-icons/bs";
-import { VscChevronDown } from "react-icons/vsc";
-import { Container } from "react-bootstrap";
-import ETH from "../images/eth.png";
+import React, {useState, useEffect} from 'react';
+import Select from 'react-select';
+import SWAP from "../images/swap.png";
+import {Container} from "react-bootstrap";
+
+const cryptoOptions = [
+  { value:'ETH', label:'ETH'}
+];
+
+const fiatOptions = [
+  { value: 'USD', label: 'USD'},
+  { value: 'MYR', label:'MYR'},
+];
 
 function Convert() {
+  const [amount, setAmount] = useState(1);
+  const [selectedCrypto, setSelectedCrypto] = useState(cryptoOptions[0]);
+  const [selectedFiat, setSelectedFiat] = useState(fiatOptions[0]);
+
+  const [selectedCryptoData, setSelectedCryptoData] = useState({});
+
+  const[isInitialCrypto, setIsInitialCrypto] = useState(true);
+
+  useEffect(() => {
+    fetch('https://coinlib.io/api/v1/coin?key=327b62b12af4dc20&pref=' + selectedFiat.value + '&symbol=' + selectedCrypto.value)
+    .
+    then(response => response.json())
+    
+    .then(data => setSelectedCryptoData(data))
+  }, [selectedCrypto, selectedFiat])
+
+  const calcResult = () => {
+    if(isInitialCrypto){
+      let total = amount*selectedCryptoData.price;
+      return total.toLocaleString();
+    }
+    else{
+      let total = amount*(1/selectedCryptoData.price);
+      return total.toLocaleString();
+    }
+  };
+
+  const onChangeCrypto = (crypto) => {
+    setSelectedCrypto(crypto);
+  };
+  const onChangeFiat = (fiat) => {
+    setSelectedFiat(fiat);
+  };
+
   return (
-    <div className="main-convert">
-      <div className="convert-rec1">
-        <Container className="converter-price">RM 12,651.56</Container>
-      </div>
-      <div className="convert-text"> 1 ETH = RM 12,651.56</div>
-      <Container className="details-convert">
-        <Container className="convert-rec2">1</Container>
-        <Container className="convert-rec3">
-          {" "}
-          ETH <img className="eth-pic" src={ETH} alt="png" />
+    <div className='main-root'>
+      <Container className = 'converter-container'>
+      <form className='inputContainer'>
+        <label>  <Container className='resultConverter1'>{calcResult()}</Container></label>
+      </form>
         </Container>
-        <Container className="arrow-icon">
-          <BsArrowLeftRight className="arrow" />
-        </Container>
-        <Container className="convert-rec4">
-          MYR <VscChevronDown className="dd-button" />
-        </Container>
-      </Container>
+          <Container className='resultConverter2'>{calcResult()} </Container>
+            <Container className='selectContainer'>
+              <form className='input-converter'>
+                <label> 
+                  <input
+                    className='inputName'
+                    type="text" 
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                 />
+                </label>
+              </form>
+
+            <Select
+            className="basic-single1"
+            classNamePrefix="select"
+            isSearchable
+            defaultValue={isInitialCrypto ? cryptoOptions[0] : fiatOptions[0]}
+            onChange={isInitialCrypto ? (e) => onChangeCrypto(e) : (e) => onChangeFiat(e)}
+            options={isInitialCrypto ? cryptoOptions : fiatOptions}
+            value={isInitialCrypto ? selectedCrypto : selectedFiat}
+            />
+            <img className ='eth-pic' src={SWAP} alt= "swap" onClick={() => setIsInitialCrypto(!isInitialCrypto)} />
+            <Select
+              className="basic-single2"
+              classNamePrefix="select"
+              isSearchable
+              defaultValue={!isInitialCrypto ? cryptoOptions[0] : fiatOptions[0]}
+              onChange={!isInitialCrypto ? (e) => onChangeCrypto(e) : (e) => onChangeFiat(e)}
+              options={!isInitialCrypto ? cryptoOptions : fiatOptions}
+              value={!isInitialCrypto ? selectedCrypto : selectedFiat}
+            />
+          </Container>
+          
+      
+      
     </div>
   );
 }

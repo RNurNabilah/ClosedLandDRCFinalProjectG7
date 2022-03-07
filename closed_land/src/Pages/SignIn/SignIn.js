@@ -1,8 +1,9 @@
-import React, { createRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Sidebar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
+// import Sidebar from "../../Components/Sidebar";
 import {
   InputGroup,
   FormControl,
@@ -11,6 +12,7 @@ import {
   Form,
 } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const signInLink =
@@ -33,23 +35,41 @@ const SignIn = () => {
     console.log(password);
   };
 
+  let navigate = useNavigate();
+
+  function navSignUp() {
+    navigate("/signup");
+  }
+
   return (
     <div>
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <div className="main-container">
-        <h1 className="title">SIGN IN</h1>
+        <h1 className="title animate__animated animate__fadeIn">SIGN IN</h1>
         <div className="signin-container">
-          <Container className="rectangle1">
+          <div className="rectangle1 animate__animated animate__slideInLeft">
             <img className="nft-image" src={NFT} alt="png" />
-          </Container>
-          <Container className="rectangle2">
+          </div>
+          <div className="rectangle2 animate__animated animate__slideInRight">
             <div className="buttons">
-              <button className="small_signin">SIGN IN</button>
-              <button className="small_signup">SIGN UP</button>
+              <button type="button" className="small_signin" disabled>
+                SIGN IN
+              </button>
+              <button
+                type="button"
+                className="small_signup"
+                onClick={navSignUp}
+              >
+                SIGN UP
+              </button>
             </div>
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group
+                className="signInUsername mb-3"
+                controlId="formBasicEmail"
+              >
                 <Form.Label>USERNAME</Form.Label>
                 <Form.Control
                   placeholder="Username"
@@ -62,7 +82,10 @@ const SignIn = () => {
                   We'll never share your information with anyone else.
                 </Form.Text>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group
+                className="signInPassword mb-3"
+                controlId="formBasicPassword"
+              >
                 <Form.Label>PASSWORD</Form.Label>
                 <Form.Control
                   type="password"
@@ -76,13 +99,17 @@ const SignIn = () => {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Remember me" />
               </Form.Group>
-              <div className="forgot-password">Forgot Password?</div>
+              <div className="forgot-password">
+                <a href="https://deriv.com/reset-password/" target="_blank">
+                  Forgot Password?
+                </a>
+              </div>
               <div className="login-button-container">
                 <button className="login-button"> LOGIN</button>
               </div>
             </Form>
-          </Container>
-          <iframe src={signInLink} id="myFrame" title="myFrame"></iframe>
+          </div>
+          {/* <iframe src={signInLink} id="myFrame" title="myFrame"></iframe> */}
         </div>
       </div>
       <Footer />

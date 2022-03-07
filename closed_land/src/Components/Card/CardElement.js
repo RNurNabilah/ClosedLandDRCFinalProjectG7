@@ -60,27 +60,31 @@ export const CardContainer = Styled.div`
   animation: ${FadeIn} 2s;
 
   &:hover{
-      transform: scale(1.03);
-      background-color: #484f57;
+    transform: scale(1.03);
+    background-color: #484f57;
     z-index: 1;
     position:relative;
   }
-    @media screen and (max-width: 1200px){
-        width: 200px
-        height: 400px
-    }
-    @media screen and (max-width: 768px){
-        width: 200px
-        height: 400px
-    }
-    @media screen and (max-width: 540px){
-        width: 200px
-        height: 400px
-    }
-    @media screen and (max-width: 417px){
-        width: 100px
-        height: 200px
-    }
+  @media screen and (min-width:1201px) {
+    width: 200px;
+    height: 270px;
+  }
+  @media screen and (max-width: 1200px){
+    width: 200px
+    height: 400px
+  }
+  @media screen and (max-width: 768px){
+    width: 200px
+    height: 400px
+  }
+  @media screen and (max-width: 540px){
+    width: 200px
+    height: 400px
+  }
+  @media screen and (max-width: 417px){
+    width: 100px
+    height: 200px
+  }
 `;
 
 export const CardImageWrapper = Styled.div`
@@ -90,16 +94,21 @@ export const CardImageWrapper = Styled.div`
 
 export const CardImage = Styled.img`
   width: 100px;
-  border-top-left-radius: calc(0.25rem - 1px);
-  border-top-right-radius: calc(0.25rem - 1px);
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  padding-bottom: 8px;
   height: 100px;
   vertical-align: middle;
   border-style: none;
-  border-radius: 10%;
 
   &:hover{
     z-index: 1;
     position:relative;
+  }
+
+  @media screen and (min-width:1201px) {
+    width: 200px;
+    height: 200px;
   }
 `;
 
@@ -112,7 +121,7 @@ export const CardAlignContainer = Styled.div`
 export const CardDetailsContainer = Styled.div`
   display: grid;
   grid-column: 1/4;
-  padding-left: 5%;
+  padding-left: 15%;
   justify-content: flex-start;
   width: 45px;
 `;
@@ -122,16 +131,25 @@ export const CardLeftAlignContainer = Styled.div`
   justify-content:flex-end;
   grid-column: 4/7;
   width: 45px;
+  @media screen and (min-width:1201px) {
+    width: 140px;
+  }
 `;
 
 export const CardTitle = Styled.h4`
   color: #FFFFFF;
   white-space: nowrap;
   font-size: 8px;
+  @media screen and (min-width:1201px) {
+    font-size: 14px;
+  }
 `;
 
 export const CardContent = Styled.p`
   color: #FFFFFF;
   white-space: nonwrap;
   font-size:8px;
+  @media screen and (min-width:1201px) {
+    font-size: 14px;
+  }
 `;

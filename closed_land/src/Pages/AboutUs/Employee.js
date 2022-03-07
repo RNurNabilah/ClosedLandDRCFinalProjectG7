@@ -16,31 +16,31 @@ function Employee() {
       <div className="employee-list">
         <Row id="emp-img">
           <Col id="columntorow">
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={ameerul} alt="ameerul" />
               <h5 id="emp-name">Ameerul</h5>
             </div>
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={raja} alt="raja" />
               <h5 id="emp-name">Raja</h5>
             </div>
           </Col>
           <Col id="columntorow">
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={suisin} alt="suisin" />
               <h5 id="emp-name">Suisin</h5>
             </div>
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={luqman} alt="luqman" />
               <h5 id="emp-name">Luqman</h5>
             </div>
           </Col>
           <Col id="columntorow">
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={amira} alt="amira" />
               <h5 id="emp-name">Amira</h5>
             </div>
-            <div>
+            <div data-aos="zoom-in">
               <img className="emp-icon" src={raven} alt="raven" />
               <h5 id="emp-name">Raven</h5>
             </div>

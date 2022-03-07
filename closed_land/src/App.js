@@ -4,6 +4,7 @@ import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Chart from "./Pages/Chart/Chart";
 import Collection from "./Pages/Collection/Collection";
+import CollectionLaptop from "./Components/CollectionLaptop/Collection";
 import LandingPage from "./Pages/LandingPage/LandingPage";
 // import NFTAssets from "./Pages/NFTAssets/NFTAssets";
 import Profile from "./Pages/Profile/Profile";
@@ -117,7 +118,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />}></Route>
           <Route path="/chart" element={<Chart />}></Route>
           <Route path="/explore" element={<Explore />}></Route>
-          <Route path="/collection" element={<Collection />}></Route>
+          <Route path="/collection" element={<CollectionLaptop />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/stats" element={<Stats />}></Route>

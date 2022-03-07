@@ -2,10 +2,10 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-family: sans-serif;
   margin: 10rem;
-}
+} */
 
 .cubeComponent {
   display: none;
@@ -46,9 +46,6 @@ body {
   transform-style: preserve-3d;
   transform: translateZ(-100px) rotateX(360deg) !important;
   transition: transform 5s;
-}
-
-.cube:hover {
 }
 
 .cube.show-front {

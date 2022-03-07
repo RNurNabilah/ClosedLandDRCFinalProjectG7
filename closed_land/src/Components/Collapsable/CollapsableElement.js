@@ -21,6 +21,7 @@ export const ContentContainer = Styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 16px;
 `;
 
 export const ItemCountContainer = Styled.div`

@@ -1,0 +1,276 @@
+.laptopBanner {
+  height: 200px;
+  background-image: url("../../../public/Azuki.jpeg");
+}
+.laptopCollectionPicContainer {
+  display: flex;
+  margin-top: -3.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.laptopCollectionPic {
+  border-radius: 50%;
+  border: 2px solid white;
+  height: 18%;
+  width: 18%;
+}
+.laptopCollectionNameContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.laptopCollectionName {
+  font-weight: 600;
+  font-size: 40px !important;
+  letter-spacing: 0px;
+  color: black !important;
+}
+.laptopCollectionCreator {
+  font-size: 16px;
+  color: grey;
+  margin-top: -15px;
+}
+.laptopSocialMediaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.laptopSocialMedia {
+  height: 5%;
+  width: 5%;
+  margin-left: 1%;
+  border-radius: 12px;
+  border: none;
+}
+.laptopSocialMedia:hover {
+  animation: shake 2s infinite alternate;
+}
+.laptopItemInfoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.laptopEachItemContainer {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(221, 221, 221);
+  width: 120px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+}
+#im {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#vt {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.laptopItemNumbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
+}
+.laptopItemType {
+  font-size: 14px;
+  color: rgb(138, 147, 155);
+}
+.laptopAssetsnAttributesContainer {
+  display: flex;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.laptopAttributesContainer {
+  width: 50%;
+  border-right: 1px solid rgb(221, 221, 221);
+}
+.laptopFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid rgb(221, 221, 221) !important;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+}
+.laptopAssetsContainer {
+  padding-top: 6px;
+  width: 50%;
+}
+.laptopCardAssets {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.buttonContainer {
+  font-size: 16px;
+  background-color: none;
+  border: none;
+  margin-left: 10px;
+}
+.laptopSearchBar {
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  /* border: none; */
+  border: 1px solid rgb(221, 221, 221);
+}
+.laptopDropDownContainer {
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.laptopItemsDropDown {
+  width: 32%;
+}
+.laptopItemsDropDownBtn {
+  display: flex;
+  width: 90%;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: white;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.laptopItemsDropDownBtn:active {
+  border: 1px solid rgb(160, 160, 160);
+}
+.laptopPriceDropDown {
+  width: 34%;
+}
+.laptopPriceDropDownBtn {
+  display: flex;
+  width: 90%;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: white;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.laptopChangeSizeContainer {
+  display: flex;
+  width: 29%;
+}
+.laptopSmallSize {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid rgb(221, 221, 221);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.laptopSmallSize:active {
+  background-color: #c9c9c9;
+}
+.laptopBigSize {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border: 1px solid rgb(221, 221, 221);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.laptopBigSize:active {
+  background-color: #c9c9c9;
+}
+
+.laptopAssetsnAttributesContainerOff {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+.laptopAttributesContainerOff {
+  grid-column: 1/1;
+  border-right: 1px solid rgb(221, 221, 221);
+}
+.laptopFilterOff {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 50px;
+}
+.buttonContainerOff {
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  background-color: none;
+  border: none;
+  margin-left: 10px;
+  justify-content: flex-end;
+}
+.laptopAssetsContainerOff {
+  grid-column: 2/7;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0%, 0%) scale(1.25, 0.75);
+  }
+  50% {
+    transform: translate(0%, -8%) scale(1, 1);
+  }
+  55% {
+    transform: translate(0%, -8%) rotate(15deg);
+  }
+  60% {
+    transform: translate(0%, -8%) rotate(-15deg);
+  }
+  65% {
+    transform: translate(0%, -8%) rotate(15deg);
+  }
+  70% {
+    transform: translate(0%, -8%) rotate(-15deg);
+  }
+  100% {
+    transform: translate(0%, -4%) scale(1.25, 0.75);
+  }
+}

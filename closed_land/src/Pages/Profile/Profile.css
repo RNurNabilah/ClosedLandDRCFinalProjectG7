@@ -1,5 +1,9 @@
 .container-main {
   background-color: #0f292f;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(162,924,474)'%3E%3Cstop offset='0' stop-color='%230F292F'/%3E%3Cstop offset='1' stop-color='%230F292F'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='689' height='574.2' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.25'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #0f292f;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -13,9 +17,11 @@
 
 .first-two {
   display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 760px) {
   .section-2 {
     display: flex;
     flex-direction: column !important;
@@ -25,6 +31,40 @@
 
   .profileContainer {
     margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-3 {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .filter-button {
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-display {
+    margin-top: 1rem;
+    justify-content: center !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 762px) {
+  .tabs-container {
+    font-size: 90% !important;
+    width: 50vw !important;
+  }
+
+  .profile-header {
+    height: 40vh;
   }
 }
 
@@ -49,7 +89,7 @@
 .profile-name {
   flex-direction: column;
   justify-content: center;
-  margin-left: 2rem;
+  margin-left: 1rem;
   margin-top: 1rem;
 }
 
@@ -63,9 +103,12 @@
 }
 
 .profileContainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
 .username-date {
@@ -93,8 +136,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  /* margin-left: 3rem; */
+  margin-right: 1rem;
   margin-top: 4rem;
 }
 
@@ -103,15 +146,15 @@
   justify-content: center;
   display: flex;
   background: #66fcf1;
-  width: 60%;
+  width: 85%;
   height: 4.2vh;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 0.5rem;
+  border-radius: 1rem;
 }
 
 .eth-wallet {
-  width: 3rem;
-  height: 2.5rem;
+  width: 2em;
+  height: 1.5em;
 }
 
 .balance-number {
@@ -126,17 +169,21 @@
   margin-top: 1rem;
   text-align: center;
   width: 91.63px;
-  height: 4vh;
+  /* height: 4vh; */
   border-radius: 2em;
   background-color: pink;
   color: white;
 }
 
 .tabs-container {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  font-size: 0.9rem;
+  font-size: 72%;
   font-family: Sora;
+  font-weight: bold;
+  width: 100vw;
 }
 
 .nav-tabs .nav-link {
@@ -146,12 +193,19 @@
 .fav-nft {
   width: 7rem;
   height: 7rem;
+  border-radius: 1rem;
+  margin: 0.5rem;
 }
 
 .section-3 {
   display: flex;
   flex-direction: row;
   margin-top: 1rem;
+}
+
+.search-mb-3 {
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .input.form-control {
@@ -164,17 +218,70 @@
 }
 
 .profile-filter {
+  font-family: Sora;
   font-weight: bold;
   font-size: 0.6rem;
-  width: 10vw;
+  width: 18vw;
   height: 4.85vh;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
   border-radius: 10px;
   background-color: #66fcf1;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .section-4 {
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.profile-display {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.sizing1-profile {
+  font-size: 0.6rem;
+  font-family: Sora;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 4.85vh;
+  background-color: #66fcf1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 30px 0px 0px 30px;
+}
+
+.sizing2-profile {
+  font-size: 0.6rem;
+  font-family: Sora;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 4.85vh;
+  background-color: #66fcf1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 30px 30px 0px;
+  margin-right: 10px;
+}
+
+@media (min-width: 426px) {
+  .profile-filter {
+    width: 10vw;
+  }
+
+  .sizing1-profile,
+  .sizing2-profile {
+    width: 10vw;
+  }
 }

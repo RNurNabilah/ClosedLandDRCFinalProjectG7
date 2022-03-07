@@ -6,10 +6,10 @@ function WhyNFT() {
   return (
     <div>
       <Row className="nft">
-        <div className="nft-logo">
+        <div className="nft-logo" data-aos="fade-right">
           <img id="WNFT" src={nft} alt="nft" />
 
-          <div className="whynft-header">
+          <div className="whynft-header" data-aos="fade-down">
             <h2 className="whynft-name">Why NFT?</h2>
             <div className="rectangle6">.</div>
             <h5 className="whynft-describe">

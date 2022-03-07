@@ -39,6 +39,24 @@ const LogoCube = () => {
       });
   };
 
+  //   const fetchAsset = async () => {
+  //     const options = {
+  //       method: "GET",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+  //       },
+  //     };
+
+  //     fetch(
+  //       "https://api.opensea.io/api/v1/assets?collection_slug=doodles-official&order_by=sale_price&order_direction=desc&limit=20&include_orders=true",
+  //       options
+  //     )
+  //       .then((response) => response.json())
+  //       .then((response) => console.log(response))
+  //       .catch((err) => console.error(err));
+  //   };
+
   useEffect(() => {
     fetchAsset().then((data) => {
       dataAssets = Object.entries(data).sort((a, b) => {
@@ -62,15 +80,28 @@ const LogoCube = () => {
           height: 500,
         }}
       >
-        <Cube size={500} index="front">
-          {altAssets.map((asset, index) => {
-            return (
-              <div>
-                <img src={asset} />
-              </div>
-            );
-          })}
-        </Cube>
+        {assets.length !== 0 ? (
+          <Cube size={500} index="front">
+            {assets.map((asset, index) => {
+              return (
+                <div key={index}>
+                  <img
+                    style={{
+                      width: 500,
+                      height: 500,
+                      objectFit: "cover",
+                    }}
+                    src={
+                      asset.image_url.length !== 0
+                        ? asset.image_url
+                        : altAssets[index]
+                    }
+                  />
+                </div>
+              );
+            })}
+          </Cube>
+        ) : null}
       </div>
     </div>
   );

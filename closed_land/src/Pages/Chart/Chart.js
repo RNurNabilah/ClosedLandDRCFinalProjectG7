@@ -1,8 +1,9 @@
 import React from "react";
 // import { Line } from 'react-chartjs-2';
 // import { Container } from "react-bootstrap";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Sidebar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
+// import Sidebar from "../../Components/Sidebar";
 import Footer from "../../Components/Footer/Footer";
 import Convert from "./converter";
 import Tab from "./tab-chart";
@@ -16,11 +17,12 @@ const Chart = () => {
   };
   return (
     <div>
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <Convert />
       <Tab />
-      <LineChart/>
+      <LineChart />
       <Footer />
     </div>
   );

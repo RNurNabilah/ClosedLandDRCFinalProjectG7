@@ -62,15 +62,28 @@ const LogoCube2 = () => {
             height: 300,
           }}
         >
-          <Cube size={300} index="front">
-            {altAssets.map((asset, index) => {
-              return (
-                <div>
-                  <img src={asset} />
-                </div>
-              );
-            })}
-          </Cube>
+          {assets.length !== 0 ? (
+            <Cube size={300} index="front">
+              {assets.map((asset, index) => {
+                return (
+                  <div key={index}>
+                    <img
+                      style={{
+                        width: 300,
+                        height: 300,
+                        objectFit: "cover",
+                      }}
+                      src={
+                        asset.image_url.length !== 0
+                          ? asset.image_url
+                          : altAssets[index]
+                      }
+                    />
+                  </div>
+                );
+              })}
+            </Cube>
+          ) : null}
         </div>
       </center>
     </div>

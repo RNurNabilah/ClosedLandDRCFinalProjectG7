@@ -38,6 +38,7 @@
   #footer-describe {
     text-align: center;
     padding: 2rem;
+    margin-left: -1.5rem;
   }
 
   .contact-logo {
@@ -59,7 +60,7 @@
   #ilogo {
     /* display: grid;
     align-items: center; */
-    margin: 0.5rem !important;
+    margin: 1rem !important;
     width: 5rem !important;
     height: 5rem !important;
   }

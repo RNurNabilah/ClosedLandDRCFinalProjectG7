@@ -1,8 +1,9 @@
 import React from "react";
 import Cards from "../../Components/Card";
 import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Sidebar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
+// import Sidebar from "../../Components/Sidebar";
 import Collapsable from "../../Components/Collapsable";
 import Collapsible from "react-collapsible";
 import "./Collection.css";
@@ -18,18 +19,19 @@ const Collection = () => {
 
   return (
     <div className="collectionPage">
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <div className="banner"></div>
       <div className="collectionPicContainer">
         <img
           className="collectionPic"
-          src="https://pbs.twimg.com/profile_images/1475936568321855490/-GpLhQY4_400x400.jpg"
+          src="https://lh3.googleusercontent.com/ufumJQN9NwT0U5jh_suJP5cLRIjyE38hirVdBChQLe-ghnt1RomIARfxSNmR6fdMQC0OIgjVQHhhduUfcxiRVrfHpihrXSW-SU5J=s0"
           alt=""
         />
       </div>
       <div className="collectionNameContainer">
-        <span className="collectionName">hi</span>
+        <span className="collectionName">AZUKI</span>
         <span className="collectionCreator">Creator: Hello World</span>
         <div className="socialMediaContainer">
           <img
@@ -75,30 +77,6 @@ const Collection = () => {
       <div className="assetsAndAttributeContainer">
         <div className="attributeContainer">
           <span className="attributes">Attributes</span>
-          {/* <Collapsible trigger="Start here">
-            <p>
-              This is the collapsible content. It can be any element or React
-              component you like.
-            </p>
-            <p>
-              It can even be another Collapsible component. Check out the next
-              section!
-            </p>
-          </Collapsible> */}
-          {/* <button className="collapsible">
-            <div className="contentCollapse">
-              <link
-                href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
-                rel="stylesheet"
-              ></link>
-              <i className="fa fa-book"></i>
-              Eyes
-              <div className="itemsCountContainer">
-                <span className="itemCount">9</span>
-                <i class="fa fa-sort-desc" aria-hidden="true"></i>
-              </div>
-            </div>
-          </button> */}
           <Collapsable
             key={1}
             function={() => {
@@ -238,7 +216,6 @@ const Collection = () => {
               scoreRating={5}
             />
             <Cards
-              // key={index}qw
               ID={1}
               collection={"Hello Word"}
               collectionName={"5"}
@@ -249,7 +226,6 @@ const Collection = () => {
               scoreRating={5}
             />
             <Cards
-              // key={index}qw
               ID={1}
               collection={"Hello Word"}
               collectionName={"5"}
@@ -260,7 +236,6 @@ const Collection = () => {
               scoreRating={5}
             />
             <Cards
-              // key={index}qw
               ID={1}
               collection={"Hello Word"}
               collectionName={"5"}
@@ -270,11 +245,6 @@ const Collection = () => {
               collectionPrice={"1 ETH"}
               scoreRating={5}
             />
-            {/* <div class="box">
-              <a class="button" href="#popup1">
-                Let me Pop up
-              </a>
-            </div> */}
           </div>
           {popup === "1" ? (
             <div id="popup1" className="popupContainer" class="overlay">

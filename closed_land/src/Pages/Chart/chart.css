@@ -1,254 +1,356 @@
-.main-convert{
-    overflow: hidden !important;
-    align-items:center;
-    background-color: #FFCB9A !important;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+body{
+  background-color:#FFCB9A !important;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Sora';
+}
+.main-root{
+  text-align: center;
 }
 
-/* .convert-rec1{
-    width: 44rem !important;
-    height: 5rem;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F8AF04;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 4rem;
-    margin: 2rem 1rem 1.5rem 36rem !important;
-    font-family: "Work Sans";
-    font-weight: bold;
-    font-size: 4rem;
-    line-height: 5rem;
-    color: #000000;
-    text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
-} */
-
-.converter-price {
-    display: flex;
-    align-items: center;
-    width: 44rem !important;
-    height: 5rem;
-    background-color: #F8AF04;
-    justify-content: center;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 4rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #000000;
-    font-family: "Work Sans";
-    font-weight: bold;
-    font-size: 4rem;
-    line-height: 5rem;
+.main-convert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+  align-items: center;
+  background-color: #ffcb9a !important;
+  min-height: 50vh;
 }
 
-.convert-text{
-    text-align: center;
-    flex: auto;
-    font-family: Sora;
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 2rem;
-    color: #000000;
-    margin: 0rem 4rem 1rem 3rem;
-}
-
-.details-convert{
-    overflow: hidden !important;
-    padding: 0 !important;
-    display: flex;
-}
-
-.convert-rec2{
-    width: 44rem !important;
-    height: 4rem;
-    display: flex;
-    background-color: #F8AF04;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 3rem;
-    margin: 2rem 0rem 2rem 1rem !important;
-    font-family: Work Sans;
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 2rem;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
+.converter-container{
+  width: 48rem !important;
+  border-radius: 3rem;
+  box-shadow: inset;
+  padding: 3rem;
+  justify-content: center !important;
+  align-items: center !important;
+  
 }
 
 .eth-pic{
-    border-radius: 50%;
-    width: 3rem;
-    margin-left: 0rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 3rem;
+  margin:auto;
 }
 
-.arrow-icon{
-    width: 4rem !important;
+.eth-pic:hover{
+  transform:scale(1.1)
 }
 
-.arrow{
-    width: 2.2rem;
-    height: 3rem;
-    margin: 3rem 1.5rem 2rem 0.5rem !important;
+.selectContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1rem;
+
 }
 
-.convert-rec3{
-    width: 35rem !important;
-    height: 4rem;
+.inputContainer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 44rem !important;
+  height: 4.5rem;
+  background-color: #F8AF04;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  font-family: "Work Sans";
+  font-size: 2.5rem;
+  font-weight: 500;;
+  line-height: 5rem;
+}
+
+.resultConverter1{
     display: flex;
-    background-color: #F8AF04;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 3rem;
-    margin: 2rem 1rem 2rem 1.5rem !important;
-    font-family: Work Sans;
-    font-weight: bold;
+    margin-top: auto !important;
+    justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.resultConverter2{
+    display: flex;
+    margin: auto;
+    justify-content: center !important;
+}
+
+label,.inputContainer{
+  display: block;
+  
+}
+
+input{
+  width: 20vw !important;
+  height: 3vh;
+  font-size: 2rem;
+}
+
+label{
+  text-align: left;
+}
+
+.basic-single1{
+    width: 20vw !important ;
+    height: 3vh;
+    display: flex;
+    /* margin: 2rem 2rem 1rem 1rem !important; */
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.basic-single2{
+    width: 20vw !important ;
+    height: 3vh;
+    display: flex;
+    /* margin: 2rem 2rem 1rem 1rem !important; */
     font-size: 2rem;
     line-height: 2rem;
-    text-align: center;
+    text-align: left;
     align-items: center;
     justify-content: center;
     color: #000000;
     text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
 }
 
-.convert-rec4{
-    width: 35rem !important;
-    height: 4rem;
-    display: flex;
-    background-color: #F8AF04;
-    box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 3rem;
-    margin: 2rem 1rem 2rem 1.5rem !important;
-    font-family: Work Sans;
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 3rem;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
+.converter-price {
+  display: flex;
+  align-items: center;
+  width: 44rem !important;
+  height: 5rem;
+  background-color: #f8af04;
+  justify-content: center;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  font-family: "Work Sans";
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 5rem;
 }
 
-.top-tab{
-    overflow: hidden;
+.convert-text {
+  text-align: center;
+  font-family: Sora;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #000000;
 }
 
-.main-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 2.5rem;
+.details-convert {
+  overflow: hidden !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.chart-page{
-margin-top: 2rem;
-display: flex;
-flex-direction: row;
-justify-content: flex-end;
-align-items: flex-end;
+.convert-rec2 {
+  width: 44rem !important;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8af04;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  margin: 2rem 0rem 2rem 1rem !important;
+  font-family: Work Sans;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
+  margin: 0 0.5rem 0 0.5rem !important;
+}
 
+.eth-pic {
+  border-radius: 50%;
+  width: 3rem;
+  margin-left: 0rem;
+}
+
+.arrow-icon {
+  width: 4rem !important;
+}
+
+.arrow {
+  width: 2.2rem;
+  height: 3rem;
+  margin: 3rem 1.5rem 2rem 0.5rem !important;
+}
+
+.convert-rec3 {
+  width: 35rem !important;
+  height: 4rem;
+  display: flex;
+  background-color: #f8af04;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  margin: 2rem 1rem 2rem 1.5rem !important;
+  font-family: Work Sans;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.convert-rec4 {
+  width: 35rem !important;
+  height: 4rem;
+  display: flex;
+  background-color: #f8af04;
+  box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
+  border-radius: 3rem;
+  margin: 2rem 1rem 2rem 1.5rem !important;
+  font-family: Work Sans;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 3rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+.top-tab {
+  overflow: hidden;
+}
+
+.main-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.chart-page {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 /* small smartphone */
-@media(min-width:320px) {
-    .converter-price{
-        font-size: 1.6rem;
-        width: 12rem !important;
-    }
+@media (min-width: 320px) {
+  .converter-price {
+    font-size: 1.6rem;
+    width: 12rem !important;
+  }
 
-    .details-convert{
-        margin-top: 0.5rem;
-    }
-    .convert-text{
-        font-size: 0.9rem;
-        margin-bottom: -1rem;
-    }
-    .convert-rec2{
-        width: 14rem !important;
-        font-size: 1.2rem;
-    }
+  .details-convert {
+    margin-top: 0.5rem;
+  }
+  .convert-text {
+    font-size: 0.9rem;
+    margin-bottom: -1rem;
+  }
+  .convert-rec2 {
+    width: 14rem !important;
+    font-size: 1.2rem;
+  }
 
-    .convert-rec3{
-        width: 16rem!important;
-        margin: 2rem 0.2rem 1rem 0.5rem !important;
-        font-size: 1.2rem;
-    }
+  .convert-rec3 {
+    width: 16rem !important;
+    margin: 2rem 0.2rem 1rem 0.5rem !important;
+    font-size: 1.2rem;
+  }
 
-    .eth-pic{
-        border-radius: 50%;
-        width: 1.5rem;
-        margin-left: 0.5rem;
-    }
-    .arrow{
-        width: 2rem !important;
-    }
-    .convert-rec4{
-        width: 12rem !important;
-        margin: 2rem 0.1rem -4rem 0.1rem !important;
-        font-size: 1.2rem;
-
-    }
+  .eth-pic {
+    border-radius: 50%;
+    width: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  .arrow {
+    width: 2rem !important;
+  }
+  .convert-rec4 {
+    width: 12rem !important;
+    margin: 2rem 0.1rem -4rem 0.1rem !important;
+    font-size: 1.2rem;
+  }
 }
 
 /* medium smartphone */
-@media(min-width:375px) {
-    .converter-price{
-        font-size: 2rem;
-        width: 20rem !important;
-    }
-    .convert-text{
-        font-size: 1.3rem;
-        margin: 0rem 3rem 0rem 3rem;
-    }
-    .convert-rec2{
-        width: 20rem !important;
-        font-size: 1.5rem;
-    }
+@media (min-width: 375px) {
+  .converter-price {
+    font-size: 2rem;
+    width: 20rem !important;
+  }
+  .convert-text {
+    font-size: 1.3rem;
+    margin: 0rem 3rem 0rem 3rem;
+  }
+  .convert-rec2 {
+    width: 20rem !important;
+    font-size: 1.5rem;
+  }
 
-    .convert-rec3{
-        width: 20rem!important;
-        margin: 2rem 0.5rem 1rem 1.5rem !important;
-        font-size: 1.5rem;
-    }
+  .convert-rec3 {
+    width: 20rem !important;
+    margin: 2rem 0.5rem 1rem 1.5rem !important;
+    font-size: 1.5rem;
+  }
 
-    .convert-rec4{
-        width: 20rem !important;
-        margin: 2rem 0.5rem 1rem 0.5rem !important;
-    }
+  .convert-rec4 {
+    width: 20rem !important;
+    margin: 2rem 0.5rem 1rem 0.5rem !important;
+  }
 }
 
 /* large smartphone */
-@media(min-width:425px) {
-    .converter-price{
-        width: 19rem !important;
-        font-size: 2.2rem;
-        
-    }
-    .convert-text{
-        font-size: 1.4rem !important;
-    }
-    .convert-rec2{
-        width: 20rem !important;
-    }
+@media (min-width: 425px) {
+  .converter-price {
+    width: 19rem !important;
+    font-size: 2.2rem;
+  }
+  .convert-text {
+    font-size: 1.4rem !important;
+  }
+  .convert-rec2 {
+    width: 20rem !important;
+  }
 
-    .convert-rec3{
-        width: 20rem !important;
-        margin: 2rem 0.5rem 1rem 1.5rem !important;
-    }
-    .eth-pic{
-        width: 1.5rem;
-        margin-left: 0.5rem;
-        border-radius: 50%;
-    }
-    .convert-rec4{
-        width: 20rem !important;
-        margin: 2rem 1rem 1rem 0.5rem !important;
-        font-size: 1.5rem;
-    }
+  .convert-rec3 {
+    width: 20rem !important;
+    margin: 2rem 0.5rem 1rem 1.5rem !important;
+  }
+  .eth-pic {
+    width: 1.5rem;
+    margin-left: 0.5rem;
+    border-radius: 50%;
+  }
+  .convert-rec4 {
+    width: 20rem !important;
+    margin: 2rem 1rem 1rem 0.5rem !important;
+    font-size: 1.5rem;
+  }
 }
 
 /* tablet
@@ -339,4 +441,4 @@ align-items: flex-end;
         margin: 2rem 1rem 1rem 0.5rem !important;
         font-size: 1.5rem;
     }
-} */ 
+} */

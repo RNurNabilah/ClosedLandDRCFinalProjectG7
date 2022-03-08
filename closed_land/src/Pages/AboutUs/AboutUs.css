@@ -24,8 +24,8 @@
   }
 
   #OS {
-    width: 10rem !important;
-    height: 10rem !important;
+    width: 12rem !important;
+    height: 12rem !important;
   }
 
   #WNFT {
@@ -67,8 +67,8 @@
     align-items: center;
   }
   #OS {
-    width: 15rem;
-    height: 15rem;
+    width: 17rem;
+    height: 17rem;
   }
 
   #WNFT {
@@ -142,7 +142,7 @@
     max-height: 60% !important; */
     display: grid;
     margin: auto !important;
-    width: 25rem !important;
+    width: 30rem !important;
   }
 
   .ourstory-describe {
@@ -189,6 +189,13 @@
 @media (max-width: 845px) {
   .main-vismis {
     padding-top: 4rem !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  #OS {
+    width: 20rem !important;
+    height: 20rem !important;
   }
 }
 

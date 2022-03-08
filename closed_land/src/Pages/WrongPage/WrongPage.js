@@ -3,6 +3,7 @@ import "./WrongPage.css";
 import LogoCube2 from "../../Components/Cube/Cube2";
 import { Container } from "react-bootstrap";
 import loadingImg from "../images/loading.svg";
+import CarLoader from "../../Components/CarLoading/CarLoader";
 
 const WrongPage = () => {
   return (
@@ -13,10 +14,10 @@ const WrongPage = () => {
       <h1 className="animate__animated animate__zoomInDown animate__delay-1s">
         Page Doesn't Exist.
       </h1>
-      <img
+      {/* <img
         src={loadingImg}
-        // className="animate__animated animate__zoomInDown animate__delay-1s"
-      />
+      /> */}
+      <CarLoader></CarLoader>
       <div className="wrongPageCube">{/* <LogoCube2></LogoCube2> */}</div>
     </div>
   );

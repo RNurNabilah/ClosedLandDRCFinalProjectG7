@@ -12,7 +12,6 @@ import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
 import Explore from "./Pages/Explore/Explore";
-import { Testcharts } from "./Pages/Chart/testchart";
 import WrongPage from "./Pages/WrongPage/WrongPage";
 
 // const options = {

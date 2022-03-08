@@ -1,21 +1,32 @@
-import React from "react";
 import Tabs from "react-bootstrap/Tabs";
-import { Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 // import {Line} from 'react-chartjs-2';
-import { Testcharts } from "./testchart";
+import LineChart from "./LineChart";
+import React, { useState } from "react";
+import CandleStick from "./CandleStick";
 
 function Tab() {
+  const [chart, setChart] = useState("line");
+
   return (
-    <div className="top-tab">
-      <Tabs id="uncontrolled-tab-example" className="main-bar">
-        <Tab eventKey="hour" title="1H" />
-        <Tab eventKey="day" title="1D" />
-        <Tab eventKey="week" title="1W" />
-        <Tab eventKey="month" title="1M" />
-        <Tab eventKey="year" title="1Y" />
-        <Tab eventKey="all" title="ALL" />
-        {/* <div className='title'>Date Range </div> */}
-      </Tabs>
+    <div>
+      <div className="top-tab">
+        <Button
+          id="lineButton"
+          onClick={() => setChart("line")}
+          disabled={chart === "line" ? true : false}
+        >
+          Line Chart
+        </Button>
+        <Button
+          id="candleButton"
+          onClick={() => setChart("candle")}
+          disabled={chart === "candle" ? true : false}
+        >
+          Candle Stick
+        </Button>
+      </div>
+      {chart === "line" ? <LineChart /> : <CandleStick />}
     </div>
   );
 }

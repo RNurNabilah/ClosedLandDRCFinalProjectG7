@@ -177,7 +177,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  z-index: 10000 !important;
+  z-index: 100 !important;
 }
 
 #h1Stats {

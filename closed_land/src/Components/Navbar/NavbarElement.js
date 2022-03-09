@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   align-items: center;
-  z-index: 10;
+  z-index: 2000;
   position: fixed;
   top: 0;
 `;

@@ -2,11 +2,6 @@ import React from "react";
 import "./Footer.css";
 import logo from "../../images/logo.png";
 import contactlogo from "../../images/contactus.png";
-import twitter from "../../images/twittericon.png";
-import discord from "../../images/discordicon.png";
-import instagram from "../../images/igicon.png";
-import youtube from "../../images/youtubeicon.png";
-import email from "../../images/emailicon.png";
 import {
   InputGroup,
   FormControl,
@@ -25,17 +20,51 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const initialFormData = Object.freeze({
+  message: "",
+});
+
+const Footer = (props) => {
+  const [formData, updateFormData] = React.useState(initialFormData);
+
+  const sendFeedback = (serviceID, templateId, variables) => {
+    window.emailjs
+      .send(serviceID, templateId, variables)
+      .then((res) => {
+        console.log("Email successfully sent!");
+      })
+      .catch((err) => console.error("There has been an error.", err));
+  };
+  const handleChange = (e) => {
+    updateFormData({
+      ...formData,
+
+      [e.target.name]: e.target.value.trim(),
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you for connecting.`);
+    const templateId = "template_edogtjl";
+    const serviceID = "service_f0a5iyg";
+    sendFeedback(serviceID, templateId, { message_html: formData.query });
+
+    console.log(formData);
+  };
+
   return (
     <div className="main-footer">
       <Row className="email-inputgroup">
         <InputGroup>
           <FormControl
+            onChange={handleChange}
+            name="message"
             placeholder="Email"
             aria-label="Email"
             aria-describedby="basic-addon2"
           />
-          <Button type="submit" id="button-addon2">
+          <Button onClick={handleSubmit} type="submit" id="button-addon2">
             {/* <span
                 class=" glyphicon glyphicon-arrow-right"
                 aria-hidden="true"
@@ -47,7 +76,9 @@ const Footer = () => {
           <div className="left-container">
             <div className="iconandname">
               <img id="ilogo" src={logo} alt="logo" />
-              <h2 className="footer-text">ClosedLand</h2>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <h2 className="footer-text">ClosedLand</h2>
+              </Link>
             </div>
             <div className="fd">
               <h5 id="footer-describe">
@@ -74,42 +105,52 @@ const Footer = () => {
           <div className="right-container">
             <h3 className="footer-socmed">Our Social Media</h3>
             <div className="socmed-icon">
-              <a href="https://twitter.com/ClosedLand_22" className="twitter">
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  size="2x"
-                  // rel="noopener noreferrer"
-                  target="_blank"
-                />
+              <a
+                href="https://twitter.com/ClosedLand_22"
+                className="twitter"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
               </a>
               {/* src={twitter}
               // alt="twitter" target="_blank" rel="noopener noreferrer" //
               aria-label="Twitter" */}
               {/* <img className="discord" src={discord} alt="discord" /> */}
-              <a href="https://discord.com/channels/@me" className="discord">
-                <FontAwesomeIcon icon={faDiscord} size="2x" target="_blank" />
+              <a
+                href="https://discord.com/channels/@me"
+                className="discord"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FontAwesomeIcon icon={faDiscord} size="2x" />
               </a>
               {/* <img className="instagram" src={instagram} alt="instagram" /> */}
               <a
                 href="https://www.instagram.com/closedland_22/"
                 className="instagram"
+                target="_blank"
+                rel="noreferrer noopener"
               >
-                <FontAwesomeIcon icon={faInstagram} size="2x" target="_blank" />
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
               </a>
               {/* <img className="youtube" src={youtube} alt="youtube" /> */}
-              <a href="https://www.youtube.com//" className="youtube">
-                <FontAwesomeIcon icon={faYoutube} size="2x" target="_blank" />
+              <a
+                // href="https://www.youtube.com//"
+                className="youtube"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <FontAwesomeIcon icon={faYoutube} size="2x" />
               </a>
               {/* <img className="email" src={email} alt="email" /> */}
               <a
                 href="https://rocketchat.besquare.com.my/group/DRC_GROUP_TEAM_7"
                 className="rocketchat"
+                target="_blank"
+                rel="noreferrer noopener"
               >
-                <FontAwesomeIcon
-                  icon={faRocketchat}
-                  size="2x"
-                  target="_blank"
-                />
+                <FontAwesomeIcon icon={faRocketchat} size="2x" />
               </a>
             </div>
           </div>

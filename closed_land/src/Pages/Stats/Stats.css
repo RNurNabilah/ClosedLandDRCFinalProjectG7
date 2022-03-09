@@ -82,7 +82,7 @@
 
 .toggleStats {
   width: 90%;
-  z-index: 10000 !important;
+  z-index: 100 !important;
 }
 
 .statsButtonGroup {

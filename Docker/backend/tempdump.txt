@@ -117,8 +117,19 @@ const MeatGrinder = async function () {
             let statsfloorprice =
               objData.collections[i].stats.floor_price || replaceDefaultNum;
 
-            redis.sadd("collectionName", objData.collections[i].slug);
+            redis.sadd("collectionName", objData.collections[i].slug); // SET
+
+            let huh = redis.spop(objData.collections[i].slug);
+
+            `https://api.opensea.io/api/v1/assets?collection_slug=doodles-official&order_by=sale_price&order_direction=desc&limit=50&include_orders=true`
+
+
+
+
+
+
             redis.hmset(
+              //HASH
               objData.collections[i].slug,
               "Name",
               name,
@@ -214,3 +225,7 @@ const MeatGrinder = async function () {
 };
 // MeatGrinder Function ENDS //
 MeatGrinder();
+
+
+
+// docker image tag 36fad710e29d node:DRC

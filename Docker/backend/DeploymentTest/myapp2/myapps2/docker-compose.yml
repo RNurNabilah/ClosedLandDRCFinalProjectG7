@@ -6,12 +6,12 @@ services:
       .
       #context: ./
     volumes:
-      - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp
+      - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp2/myapps2
     ports:
       - "7777:7777"
     image: node:DRC
     #container_name: overREACTion
-    command: npm install, npm start
+    command: npm start
     networks:
       - default
 
@@ -28,27 +28,27 @@ services:
     networks:
       - default
 
-  # # Provider
-  # provider:
-  #   build: .
-  #   ports:
-  #     - "5454:5454"
-  #   image: node:DRC
-  #   command: node varProvider.js
-  #   restart: "always"
-  #   networks:
-  #     - default
+  # Provider
+  provider:
+    build: .
+    ports:
+      - "5454:5454"
+    image: node:DRC
+    command: node varProvider.js
+    restart: "always"
+    networks:
+      - default
 
-  # # Consumer
-  # consumer:
-  #   build: .
-  #   ports:
-  #     - "5450:5450"
-  #   image: node:DRC
-  #   command: node varConsumer.js
-  #   restart: "always"
-  #   networks:
-  #     - default
+  # Consumer
+  consumer:
+    build: .
+    ports:
+      - "5450:5450"
+    image: node:DRC
+    command: node varConsumer.js
+    restart: "always"
+    networks:
+      - default
 
   #Redis
   redis:

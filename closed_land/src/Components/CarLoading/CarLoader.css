@@ -1,94 +1,116 @@
-.loader {
-  position: absolute;
-  margin: 3rem;
+.containerCarLoader {
+  display: grid;
+  place-items: center;
   z-index: 100;
+  position: absolute;
 }
 
+.loader {
+  width: 250px;
+  height: 250px;
+}
+
+/* ------Wheels animation---------- */
+.wheel {
+  fill: #f8af04;
+}
+
+.wheel-details {
+  fill: #f9f9f9;
+  opacity: 0.7;
+}
+
+.back-wheel {
+  transform-origin: 18px 56px;
+  animation: wheel 300ms linear infinite;
+}
+
+.front-wheel {
+  transform-origin: 59px 56px;
+  animation: wheel 300ms linear infinite;
+  animation-delay: 200ms;
+}
+
+@keyframes wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* ------Lines styles---------- */
+.line {
+  stroke: #f8af04;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6px;
+}
+
+.line-1 {
+  stroke-dasharray: 20% 80%;
+  animation: line-1 400ms linear infinite;
+}
+
+.line-2 {
+  stroke-dasharray: 10% 90%;
+  animation: line-1 400ms linear infinite;
+  animation-delay: 200ms;
+}
+
+.line-floor {
+  stroke-dasharray: 60% 10%;
+  stroke-dashoffset: 65;
+  animation: line-2 800ms linear infinite;
+}
+
+/* ------Lines animation---------- */
+@keyframes line-1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -80;
+  }
+}
+@keyframes line-2 {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -56;
+  }
+}
+/* ------Car styles---------- */
 .car {
-  transform: scale(3);
+  fill: #f8af04;
+  transform-origin: center center;
+  animation: car 600ms linear infinite;
 }
 
-.car__body {
-  /* -webkit-animation: shake 0.2s ease-in-out infinite;
-  animation: shake 0.2s ease-in-out infinite; */
-}
-
-.car__line {
-  transform-origin: center right;
-  stroke-dasharray: 22;
-  -webkit-animation: line 0.8s ease-in-out infinite;
-  animation: line 0.8s ease-in-out infinite;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.car__line--top {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-}
-.car__line--middle {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-.car__line--bottom {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-
-@-webkit-keyframes shake {
+/* ------Car animation---------- */
+@keyframes car {
   0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-@-webkit-keyframes line {
-  0% {
-    stroke-dashoffset: 22;
-  }
-  25% {
-    stroke-dashoffset: 22;
+    transform: rotate(0deg);
   }
   50% {
-    stroke-dashoffset: 0;
-  }
-  51% {
-    stroke-dashoffset: 0;
-  }
-  80% {
-    stroke-dashoffset: -22;
+    transform: rotate(-1deg) translateY(1px);
   }
   100% {
-    stroke-dashoffset: -22;
+    transform: rotate(0deg);
   }
 }
-@keyframes line {
-  0% {
-    stroke-dashoffset: 22;
+.cloud {
+  fill: #f8af04;
+  opacity: 0.5;
+  animation: cloud 900ms linear infinite;
+}
+
+@keyframes cloud {
+  from {
+    transform: translateX(40%);
   }
-  25% {
-    stroke-dashoffset: 22;
-  }
-  50% {
-    stroke-dashoffset: 0;
-  }
-  51% {
-    stroke-dashoffset: 0;
-  }
-  80% {
-    stroke-dashoffset: -22;
-  }
-  100% {
-    stroke-dashoffset: -22;
+  to {
+    transform: translateX(-90%);
   }
 }

@@ -16,127 +16,41 @@ const CandleStick = () => {
   const [history, setHistory, refRealHistory] = useState([]);
   const [chartData, setChartData] = useState([]);
   const [timeFrame, setTimeFrame] = useState("1M");
-  const [series, setSeries] = useState([
-    {
-      data: [
-        {
-          time: "2018-10-19",
-          open: 180.34,
-          high: 180.99,
-          low: 178.57,
-          close: 179.85,
-        },
-        {
-          time: "2018-10-22",
-          open: 180.82,
-          high: 181.4,
-          low: 177.56,
-          close: 178.75,
-        },
-        {
-          time: "2018-10-23",
-          open: 175.77,
-          high: 179.49,
-          low: 175.44,
-          close: 178.53,
-        },
-        {
-          time: "2018-10-24",
-          open: 178.58,
-          high: 182.37,
-          low: 176.31,
-          close: 176.97,
-        },
-        {
-          time: "2018-10-25",
-          open: 177.52,
-          high: 180.5,
-          low: 176.83,
-          close: 179.07,
-        },
-        {
-          time: "2018-10-26",
-          open: 176.88,
-          high: 177.34,
-          low: 170.91,
-          close: 172.23,
-        },
-        {
-          time: "2018-10-29",
-          open: 173.74,
-          high: 175.99,
-          low: 170.95,
-          close: 173.2,
-        },
-        {
-          time: "2018-10-30",
-          open: 173.16,
-          high: 176.43,
-          low: 172.64,
-          close: 176.24,
-        },
-        {
-          time: "2018-10-31",
-          open: 177.98,
-          high: 178.85,
-          low: 175.59,
-          close: 175.88,
-        },
-        {
-          time: "2018-11-01",
-          open: 176.84,
-          high: 180.86,
-          low: 175.9,
-          close: 180.46,
-        },
-        {
-          time: "2018-11-02",
-          open: 182.47,
-          high: 183.01,
-          low: 177.39,
-          close: 179.93,
-        },
-        {
-          time: "2018-11-05",
-          open: 181.02,
-          high: 182.41,
-          low: 179.3,
-          close: 182.19,
-        },
-      ],
-    },
-  ]);
-  const [options, setOptions] = useState({
-    options: {
-      alignLabels: true,
-      timeScale: {
-        rightOffset: 12,
-        barSpacing: 3,
-        fixLeftEdge: true,
-        lockVisibleTimeRangeOnResize: true,
-        rightBarStaysOnScroll: true,
-        borderVisible: false,
-        borderColor: "#fff000",
-        visible: true,
-        timeVisible: true,
-        secondsVisible: false,
-      },
-      upColor: "red",
-      downColor: "blue",
-    },
-  });
 
+  const options = {
+    alignLabels: true,
+    timeScale: {
+      rightOffset: 12,
+      barSpacing: 3,
+      fixLeftEdge: true,
+      lockVisibleTimeRangeOnResize: true,
+      rightBarStaysOnScroll: true,
+      borderVisible: false,
+      borderColor: "#fff000",
+      visible: true,
+      timeVisible: true,
+      secondsVisible: true,
+    },
+    layout: {
+      textColor: "#F2EAD0",
+      fontSize: 12,
+      fontFamily: "monospace",
+    },
+    localization: {
+      dateFormat: "dd/MM/yyyy",
+    },
+  };
   useEffect(() => {
     ws.onopen = function (evt) {
       switch (timeFrame) {
         case "1M":
           setChartData([]);
-          console.log(timeFrame);
+          //   console.log(timeFrame);
           ws.send(
             JSON.stringify({
               ticks_history: "R_50",
               adjust_start_time: 1,
-              count: 1000,
+              count: 5000,
               end: "latest",
               start: 1,
               style: "candles",
@@ -146,12 +60,12 @@ const CandleStick = () => {
           break;
         case "5M":
           setChartData([]);
-          console.log(timeFrame);
+          //   console.log(timeFrame);
           ws.send(
             JSON.stringify({
               ticks_history: "R_50",
               adjust_start_time: 1,
-              count: 1000,
+              count: 5000,
               end: "latest",
               start: 1,
               style: "candles",
@@ -166,7 +80,7 @@ const CandleStick = () => {
             JSON.stringify({
               ticks_history: "R_50",
               adjust_start_time: 1,
-              count: 1000,
+              count: 5000,
               end: "latest",
               start: 1,
               style: "candles",
@@ -221,6 +135,8 @@ const CandleStick = () => {
     };
   }, []);
 
+  //   console.log(timeFrame);
+
   //   console.log(chartData);
   return (
     <div className="candleStickChart">
@@ -229,7 +145,7 @@ const CandleStick = () => {
           eventKey="1M"
           title="1M"
           id="tabCS"
-          onClick={() => setTimeFrame("1M")}
+          onClick={(e) => console.log(e.target.textContent)}
         />
         <Tab eventKey="5M" title="5M" />
         <Tab eventKey="15M" title="15M" />
@@ -247,15 +163,20 @@ const CandleStick = () => {
         {chartData.length === 0 ? <CarLoader /> : null}
         <Chart
           options={options}
-          candlestickSeries={
-            chartData === []
-              ? console.log(series)
-              : [
-                  {
-                    data: chartData,
-                  },
-                ]
-          }
+          candlestickSeries={[
+            {
+              data: chartData,
+              options: {
+                borderVisible: false,
+                wickVisible: true,
+                borderColor: "#000000",
+                // wickColor: "#000000",
+                // upColor: "#14a098",
+                downColor: "#A52A2A",
+                wickDownColor: "#A52A2A",
+              },
+            },
+          ]}
           autoWidth
           height={400}
           darkTheme

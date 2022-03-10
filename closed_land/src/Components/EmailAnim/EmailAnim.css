@@ -9,11 +9,10 @@
   width: var(--base-size);
   height: var(--base-size);
   margin: auto;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 #anim-bg {
   border-radius: 50%;
@@ -51,7 +50,7 @@
   color: #fefefe;
   font-size: calc(var(--base-size) / 2.5);
   /*   text-shadow: -15px 15px 0px rgba(0, 172, 230,0.45); */
-  text-shadow: -15px 15px 0px #0d76bd;
+  filter: drop-shadow(-15px 15px 0px #0d76bd);
   animation: mail-stretch var(--anim-time) linear infinite;
 }
 
@@ -193,8 +192,8 @@
   bottom: calc(var(--base-size) / 3);
   position: absolute;
   border-radius: 50%;
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   /*   background: #90cc91; */
   background: #a0cf67;
   overflow: visible;
@@ -241,8 +240,8 @@
   position: absolute;
   background: white;
   border-radius: 5px;
-  top: 14px;
-  left: 5px;
+  top: 12px;
+  left: 3px;
   transform: rotate(45deg);
   animation: check-stroke1 var(--anim-time) linear infinite;
 }
@@ -253,8 +252,8 @@
   position: absolute;
   background: white;
   border-radius: 5px;
-  top: 13px;
-  left: 9px;
+  top: 11px;
+  left: 7px;
   transform: rotate(-45deg);
   animation: check-stroke2 var(--anim-time) linear infinite;
 }

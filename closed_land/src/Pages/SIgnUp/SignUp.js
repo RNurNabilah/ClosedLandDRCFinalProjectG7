@@ -12,10 +12,24 @@ import MyVerticallyCenteredModal from "./Verify/Verify";
 const SignUp = () => {
   let navigate = useNavigate();
   const [modalShow, setModalShow] = React.useState(false);
-
+  const [email, setEmail] = useState("");
+  const [validated, setValidated] = useState(false);
   function navSignIn() {
     navigate("/signin");
   }
+
+  function handleSubmit(event) {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    setValidated(true);
+    setModalShow(true);
+  }
+
+  console.log(validated);
 
   return (
     <div>
@@ -36,21 +50,29 @@ const SignUp = () => {
                 SIGN UP
               </button>
             </div>
-            <Form>
-              <Form.Group className="usernames" controlId="formBasicUsername">
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+              {/* <Form.Group className="usernames" controlId="formBasicUsername">
                 <Form.Label> Username</Form.Label>
                 <Form.Control
                   type="textfield"
                   placeholder="Enter your username"
                 />
-              </Form.Group>
+              </Form.Group> */}
 
               <Form.Group className="email1" controlId="formBasicEmail">
-                <Form.Label> Email</Form.Label>
-                <Form.Control type="email" placeholder="Enter your email" />
+                <Form.Label> EMAIL</Form.Label>
+                <Form.Control
+                  required
+                  type="email"
+                  placeholder="Enter your email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <Form.Control.Feedback type="invalid">
+                  Please choose a username.
+                </Form.Control.Feedback>
               </Form.Group>
 
-              <Form.Group className="password" controlId="formBasicPassword">
+              {/* <Form.Group className="password" controlId="formBasicPassword">
                 <Form.Label> Password</Form.Label>
                 <Form.Control
                   type="password"
@@ -64,12 +86,12 @@ const SignUp = () => {
                   type="password"
                   placeholder="Re-enter your password"
                 />
-              </Form.Group>
+              </Form.Group> */}
               <div className="signup-container">
                 <button
-                  type="button"
+                  type="submit"
+                  disabled={validated}
                   className="signup-button"
-                  onClick={() => setModalShow(true)}
                 >
                   SIGN UP
                 </button>
@@ -77,6 +99,7 @@ const SignUp = () => {
               <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                props={email}
               />
             </Form>
           </div>

@@ -1,3 +1,4 @@
+import { FaEnvelope } from "react-icons/fa";
 import React from "react";
 import "./EmailAnim.css";
 
@@ -9,7 +10,7 @@ const EmailAnim = () => {
           <div className="speedline line1"></div>
           <div className="speedline line2"></div>
           <div className="speedline line3"></div>
-          <i id="env" className="fas fa-envelope"></i>
+          <FaEnvelope id="env" />
         </div>
       </div>
 

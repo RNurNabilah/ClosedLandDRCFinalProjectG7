@@ -22,9 +22,8 @@ const Verify = (props) => {
           <EmailAnim />
         </div>
         <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
+          We have sent an email to {props["props"]}! Please verify your email to
+          proceed.
         </p>
       </Modal.Body>
       <Modal.Footer>

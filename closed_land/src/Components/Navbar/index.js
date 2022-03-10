@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/logo.png";
+import logo from "../../images/Artboard.svg";
 import { FaEthereum } from "react-icons/fa";
 // import Search from "../Search";
 import {

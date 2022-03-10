@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
@@ -7,9 +7,11 @@ import Footer from "../../Components/Footer/Footer";
 import { Container } from "react-bootstrap";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
+import MyVerticallyCenteredModal from "./Verify/Verify";
 
 const SignUp = () => {
   let navigate = useNavigate();
+  const [modalShow, setModalShow] = React.useState(false);
 
   function navSignIn() {
     navigate("/signin");
@@ -64,8 +66,18 @@ const SignUp = () => {
                 />
               </Form.Group>
               <div className="signup-container">
-                <button className="signup-button">SIGN UP</button>
+                <button
+                  type="button"
+                  className="signup-button"
+                  onClick={() => setModalShow(true)}
+                >
+                  SIGN UP
+                </button>
               </div>
+              <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+              />
             </Form>
           </div>
         </div>

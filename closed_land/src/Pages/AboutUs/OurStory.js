@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import ourstorylogo from "../../images/ourstory.png";
+import ourstorylogo from "../../images/Artboard.svg";
 
 function OurStory() {
   return (

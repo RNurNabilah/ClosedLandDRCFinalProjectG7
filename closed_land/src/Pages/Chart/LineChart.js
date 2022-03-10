@@ -8,8 +8,12 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import annotationPlugin from "chartjs-plugin-annotation";
+import { withTheme } from "styled-components";
+import CarLoader from "../../Components/CarLoading/CarLoader";
 
 chartJS.register(
   CategoryScale,
@@ -18,7 +22,9 @@ chartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  annotationPlugin,
+  Filler
 );
 
 const LineChart = () => {
@@ -63,7 +69,7 @@ const LineChart = () => {
 
   useEffect(() => {
     ws.onopen = function (evt) {
-      ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+      ws.send(JSON.stringify({ ticks: "R_50" }));
     };
     //Fired when a connection with WebSocket is opened.
     ws.onmessage = function (evt) {
@@ -97,45 +103,82 @@ const LineChart = () => {
       {
         label: "ETH Price",
         data: quote,
-        fill: false,
-        fillcolor: "rgba(75,192,192,0.1)",
-        lineTension: 0.1,
-        backgroundColor: "rgba(75,192,192,0.4)",
-        borderColor: "rgba(75,192,192,1)",
-        // borderCapStyle: "butt",
-        // borderDash: [],
-        // borderDashOffset: 0.0,
-        // borderJoinStyle: "miter",
-        // pointBorderColor: "rgba(75,192,192,1)",
-        // pointBackgroundColor: "#fff",
-        // pointBorderWidth: 1,
-        // pointHoverRadius: 5,
-        // pointHoverBackgroundColor: "rgba(75,192,192,1)",
-        // pointHoverBorderColor: "rgba(220,220,220,1)",
-        // pointHoverBorderWidth: 2,
-        // pointRadius: 1,
-        // pointHitRadius: 10,
+        fill: true,
+        lineTension: 0.2,
+        backgroundColor: "rgb(203, 45, 111, 0.6)",
+        borderColor: "rgb(203, 45, 111, 1)",
+        pointRadius: 5,
       },
     ],
   };
 
   let options = {
     maintainAspectRatio: false,
+    plugins: {
+      annotation: {
+        annotations: {
+          line1: {
+            type: "line",
+            drawTime: "afterDraw",
+            yScaleID: "yAxis",
+            yMin: quote[quote.length - 1],
+            yMax: quote[quote.length - 1],
+            borderColor: "rgb(102, 252, 241)",
+            borderWidth: 2,
+            label: {
+              content: quote[quote.length - 1],
+              enabled: true,
+              position: "right",
+            },
+          },
+        },
+      },
+      legends: {
+        labels: {
+          font: {
+            size: 20,
+            color: "white",
+          },
+        },
+      },
+    },
     scales: {
       xAxis: {
         min: epoch[epoch.length - 10],
+        ticks: {
+          color: "white",
+        },
+        grid: {
+          color: "rgb(255, 255, 255, 0.2)",
+        },
+      },
+      yAxis: {
+        ticks: {
+          color: "white",
+        },
+        grid: {
+          color: "rgb(255, 255, 255, 0.2)",
+        },
       },
     },
     legend: {
-      labels: {
-        fontSize: 100,
-      },
+      labels: {},
     },
   };
 
   return (
-    <div>
-      <Line data={dataChart} height={400} options={options} />
+    <div className="liveChartPage">
+      {/* {dataChart["labels"] === [] ? (
+        <CarLoader style={{ zIndex: 100 }} />
+      ) : null} */}
+
+      {dataChart["labels"].length === 0 ? <CarLoader /> : null}
+      <Line
+        className="dataChart"
+        data={dataChart}
+        height={400}
+        options={options}
+      />
     </div>
   );
 };

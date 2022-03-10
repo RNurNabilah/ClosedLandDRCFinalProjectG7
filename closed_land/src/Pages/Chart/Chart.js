@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer/Footer";
 import Convert from "./converter";
 import Tab from "./tab-chart";
 import "./chart.css";
-import LineChart from "./testchart";
+import LineChart from "./LineChart";
 
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -16,13 +16,13 @@ const Chart = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <div>
+    <div className="chartPage">
       <Ethcall />
       {/* <Navbar toggle={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <Convert />
       <Tab />
-      <LineChart />
+      {/* <LineChart /> */}
       <Footer />
     </div>
   );

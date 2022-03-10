@@ -48,11 +48,14 @@
 }
 
 .buttons {
+  position: absolute;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-top: 20px;
+  padding: 1.5rem 0.8rem 0 0;
+  top: 0;
+  right: 0;
 }
 
 .small_signin {

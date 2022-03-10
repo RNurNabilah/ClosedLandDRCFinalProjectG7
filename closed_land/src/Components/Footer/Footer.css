@@ -132,8 +132,8 @@
     display: grid;
     align-items: center;
     margin: 0.5rem !important;
-    width: 4rem !important;
-    height: 4rem !important;
+    width: 6rem !important;
+    height: 6rem !important;
   }
 
   #footer-describe {

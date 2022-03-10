@@ -313,21 +313,21 @@ export const NavImageWrapper = styled.div`
 `;
 
 export const NavImage = styled.img`
-  height: 60px;
-  width: 60px;
+  height: 80px;
+  width: 80px;
   border-radius: 9rem;
 
   @media screen and (max-width: 1240px) {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
   }
   @media screen and (max-width: 1000px) {
-    height: 46px;
-    width: 46px;
+    height: 60px;
+    width: 60px;
   }
   @media screen and (max-width: 800px) {
-    height: 36px;
-    width: 36px;
+    height: 50px;
+    width: 50px;
   }
 `;
 

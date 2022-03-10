@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo from "../../images/logo.png";
+import logo from "../../images/Artboard.svg";
 import contactlogo from "../../images/contactus.png";
 import {
   InputGroup,

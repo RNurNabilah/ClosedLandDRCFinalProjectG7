@@ -70,9 +70,9 @@ const SignIn = () => {
                 className="signInUsername mb-3"
                 controlId="formBasicEmail"
               >
-                <Form.Label>USERNAME</Form.Label>
+                <Form.Label>EMAIL</Form.Label>
                 <Form.Control
-                  placeholder="Username"
+                  placeholder="Email"
                   type="email"
                   placeholder="Enter email"
                   value={email}

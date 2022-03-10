@@ -55,12 +55,14 @@
 }
 
 .outer-button {
+  position: absolute;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding-top: 20px;
+  padding: 1.5rem 0.8rem 0 0;
   top: 0 !important;
+  right: 0;
 }
 
 .button-signin {
@@ -136,7 +138,7 @@
 .email1 {
   line-height: 30px;
   flex-direction: column;
-  margin-bottom: 0.5em;
+  margin-bottom: 2rem;
   color: #ffffff;
 }
 
@@ -195,7 +197,7 @@
 
 .signup-button {
   margin-bottom: 1em;
-  width: 100px;
+  width: 100%;
   height: 45.06px;
   background-color: #cb2d6f;
   box-shadow: 1px 4px 10px rgba(31, 100, 255, 0.25);
@@ -207,6 +209,14 @@
   line-height: 19px;
   text-align: center;
   color: #ffffff;
+}
+
+.signup-button:disabled,
+.signup-button[disabled],
+.signup-button:disabled:hover,
+.signup-button[disabled]:hover {
+  background-color: #cccccc !important;
+  color: #666666;
 }
 
 .signup-button:hover {

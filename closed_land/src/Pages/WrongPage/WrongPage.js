@@ -1,10 +1,10 @@
 import React from "react";
 import "./WrongPage.css";
-import LogoCube2 from "../../Components/Cube/Cube2";
+import LogoCube2 from "../../Components/Animations/Cube/Cube2";
 import { Container } from "react-bootstrap";
 import loadingImg from "../images/loading.svg";
-import CarLoader from "../../Components/CarLoading/CarLoader";
-import EmailAnim from "../../Components/EmailAnim/EmailAnim";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
+import EmailAnim from "../../Components/Animations/EmailAnim/EmailAnim";
 
 const WrongPage = () => {
   return (

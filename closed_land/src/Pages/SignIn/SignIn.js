@@ -4,7 +4,7 @@ import NFT from "../images/nft.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
 // import Navbar from "../../Components/Navbar";
 // import Sidebar from "../../Components/Sidebar";
-import CarLoader from "../../Components/CarLoading/CarLoader";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 import { Alert } from "react-bootstrap";
 import {
   InputGroup,

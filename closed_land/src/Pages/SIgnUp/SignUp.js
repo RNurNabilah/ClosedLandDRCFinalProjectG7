@@ -8,7 +8,7 @@ import { Container } from "react-bootstrap";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
 import MyVerticallyCenteredModal from "./Verify/Verify";
-import CarLoader from "../../Components/CarLoading/CarLoader";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 
 const SignUp = () => {
   let navigate = useNavigate();
@@ -63,8 +63,8 @@ const SignUp = () => {
   function handleEnterSubmit(event) {
     if (event.keyCode === 13) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-        setValidated(true);
-        setModalShow(true);
+        setIsLoading(true);
+        sendEmail();
       } else {
         console.log("lol");
       }

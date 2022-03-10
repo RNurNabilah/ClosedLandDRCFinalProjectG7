@@ -13,7 +13,7 @@ import {
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { withTheme } from "styled-components";
-import CarLoader from "../../Components/CarLoading/CarLoader";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 
 chartJS.register(
   CategoryScale,

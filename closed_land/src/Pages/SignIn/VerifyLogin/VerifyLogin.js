@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./VerifyLogin.css";
-import EmailAnim from "../../../Components/EmailAnim/EmailAnim";
+import Incorrect from "../../../Components/Animations/Incorrect/Incorrect";
 
 const VerifyLogin = (props) => {
   return (
@@ -19,7 +19,7 @@ const VerifyLogin = (props) => {
       </Modal.Header>
       <Modal.Body>
         <div>
-          <EmailAnim />
+          <Incorrect />
         </div>
         <p>Please re-enter your api token.</p>
       </Modal.Body>

@@ -34,8 +34,6 @@ const LineChart = () => {
   // let arr = [];
   // let quotes = [];
 
-  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
-
   // useEffect(() => {
   //   ws.onopen = function (evt) {
   //     ws.send(JSON.stringify({ ticks: "frxXAUUSD" }));
@@ -59,6 +57,8 @@ const LineChart = () => {
   // useEffect(() => {
   //   console.log(ethTick);
   // }, [ethTick]);
+
+  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
   const data = [];
   let quoteprice = []; //x-axis

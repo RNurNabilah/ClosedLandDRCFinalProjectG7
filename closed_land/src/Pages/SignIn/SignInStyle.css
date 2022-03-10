@@ -17,6 +17,24 @@
   }
 } */
 
+.loadingSignUp {
+  background: rgb(11, 12, 16, 0.5) !important;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+}
+
+.alertSignIn {
+  position: fixed;
+  bottom: 0;
+  left: 1rem;
+}
+
 .nft-image {
   width: 50vw;
   border-radius: 15px;

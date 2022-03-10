@@ -5,6 +5,7 @@ import Cards from "../Card";
 import React from "react";
 import "./Collection.css";
 import PropTypes from "prop-types";
+import Ethcall from "../../Components/CombNav/Ethcall";
 
 const CollectionLaptop = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -32,8 +33,10 @@ awesome.min.css"
 wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         crossorigin="anonymous"
       />
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
+
       <div className="laptopCollection">
         <div className="laptopBanner"></div>
         <div className="laptopCollectionPicContainer">

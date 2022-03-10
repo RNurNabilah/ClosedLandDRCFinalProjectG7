@@ -24,7 +24,7 @@ import {
 
 const Navbar = ({ ethTick, toggle }) => {
   const [searchName, setSearchName] = React.useState("");
-  // console.log("NavBar", ethTick);
+  console.log("NavBar", ethTick);
 
   return (
     <div>

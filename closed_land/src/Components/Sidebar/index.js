@@ -24,7 +24,7 @@ const Sidebar = (props) => {
   // }, [props]);
 
   // console.log(eth);
-  console.log("Sidebar", props.ethTick);
+  console.log("Sidebar", props);
 
   return (
     <SidebarContainer isOpen={props.isOpen} onClick={props.toggleSidebar}>

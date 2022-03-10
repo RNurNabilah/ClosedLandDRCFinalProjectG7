@@ -48,7 +48,7 @@ const Footer = (props) => {
     alert(`Thank you for connecting.`);
     const templateId = "template_edogtjl";
     const serviceID = "service_f0a5iyg";
-    sendFeedback(serviceID, templateId, { message_html: formData.query });
+    sendFeedback(serviceID, templateId, { message: formData.query });
 
     console.log(formData);
   };

@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../images/Artboard.svg";
 import { FaEthereum } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 // import Search from "../Search";
 import {
   NavLink,
@@ -60,13 +61,14 @@ const Navbar = ({ ethTick, toggle }) => {
             <NavLink to="/aboutus">
               <NavPageLocation>About Us</NavPageLocation>
             </NavLink>
+            <CgProfile className="cgProfile"></CgProfile>
           </NavEthereumContainer>
         </NavMenu>
         <NavMobileBars>
           <Bars onClick={toggle} />
         </NavMobileBars>
         <NavBtn>
-          <NavBtnLink to="/signin">Sign Out</NavBtnLink>
+          <NavBtnLink to="/signin">Sign In</NavBtnLink>
         </NavBtn>
       </Nav>
     </div>

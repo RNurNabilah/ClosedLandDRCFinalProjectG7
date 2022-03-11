@@ -7,11 +7,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
+import { MetaMaskProvider } from "metamask-react";
 AOS.init();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MetaMaskProvider>
+      <App />
+    </MetaMaskProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

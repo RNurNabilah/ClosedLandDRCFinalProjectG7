@@ -24,6 +24,7 @@
     "https-browserify": "^1.0.0",
     "ioredis": "^4.28.5",
     "lightweight-charts": "^3.8.0",
+    "metamask-react": "^2.3.0",
     "react": "^17.0.2",
     "react-3d-cube": "^1.0.5",
     "react-bootstrap": "^2.1.2",

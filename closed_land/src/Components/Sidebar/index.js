@@ -9,6 +9,7 @@ import {
   SidebarRoute,
   SidebarMenu,
   NavEthereumContainer,
+  ProfileIcon,
 } from "./SidebarElement";
 import { FaEthereum } from "react-icons/fa";
 
@@ -42,6 +43,7 @@ const Sidebar = (props) => {
           <SidebarLink to="/explore">Explore</SidebarLink>
           <SidebarLink to="/stats">Stats</SidebarLink>
           <SidebarLink to="/aboutus">About Us</SidebarLink>
+          <ProfileIcon type="button"></ProfileIcon>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign Out</SidebarRoute>

@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
 import Typical from "react-typical";
 import loadingImg from "../images/loading.svg";
-import LogoCube from "../../Components/Cube/Cube";
-import LogoCube2 from "../../Components/Cube/Cube2";
+import LogoCube from "../../Components/Animations/Cube/Cube";
+import LogoCube2 from "../../Components/Animations/Cube/Cube2";
 import "animate.css";
 
 const Home = () => {

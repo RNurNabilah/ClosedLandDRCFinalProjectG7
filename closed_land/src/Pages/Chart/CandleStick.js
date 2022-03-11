@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Chart from "@qognicafinance/react-lightweight-charts";
 import useState from "react-usestateref";
 import { Tabs, Tab } from "react-bootstrap";
-import CarLoader from "../../Components/CarLoading/CarLoader";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 
 const CandleStick = () => {
   const arr = [];

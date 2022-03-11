@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
@@ -8,34 +8,80 @@ import { Container } from "react-bootstrap";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
 import MyVerticallyCenteredModal from "./Verify/Verify";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 
 const SignUp = () => {
   let navigate = useNavigate();
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const [email, setEmail] = useState("");
   const [validated, setValidated] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
+
+  function sendEmail() {
+    ws.onopen = function (evt) {
+      ws.send(
+        JSON.stringify({
+          verify_email: email,
+          type: "account_opening",
+        })
+      );
+    };
+    //Fired when a connection with WebSocket is opened.
+    ws.onmessage = function (msg) {
+      const data = JSON.parse(msg.data);
+      console.log(data);
+      setValidated(true);
+      setModalShow(true);
+      setIsLoading(false);
+    };
+  }
+
   function navSignIn() {
     navigate("/signin");
   }
 
-  function handleSubmit(event) {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+  function handleSubmit() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      setIsLoading(true);
+      sendEmail();
+    } else {
+      console.log("lol");
     }
-
-    setValidated(true);
-    setModalShow(true);
   }
 
-  console.log(validated);
+  function handleModal() {
+    setModalShow(false);
+    setValidated(false);
+    setEmail("");
+    let frm = document.getElementById("formBasicEmail");
+    frm.value = "";
+    ws.close();
+  }
+
+  function handleEnterSubmit(event) {
+    if (event.keyCode === 13) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        setIsLoading(true);
+        sendEmail();
+      } else {
+        console.log("lol");
+      }
+    }
+  }
 
   return (
     <div>
       <Ethcall />
       {/* <Navbar /> */}
+
       <div className="main-container">
+        {isLoading ? (
+          <div className="loadingSignUp">
+            <CarLoader></CarLoader>
+          </div>
+        ) : null}
         <h1 className="title animate__animated animate__fadeIn">SIGN UP</h1>
         <div className="sub-container">
           <div className="rectangle1 animate__animated animate__slideInLeft">
@@ -50,7 +96,7 @@ const SignUp = () => {
                 SIGN UP
               </button>
             </div>
-            <Form noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form>
               {/* <Form.Group className="usernames" controlId="formBasicUsername">
                 <Form.Label> Username</Form.Label>
                 <Form.Control
@@ -66,6 +112,7 @@ const SignUp = () => {
                   type="email"
                   placeholder="Enter your email"
                   onChange={(e) => setEmail(e.target.value)}
+                  onKeyDown={handleEnterSubmit}
                 />
                 <Form.Control.Feedback type="invalid">
                   Please choose a username.
@@ -89,8 +136,8 @@ const SignUp = () => {
               </Form.Group> */}
               <div className="signup-container">
                 <button
-                  type="submit"
-                  disabled={validated}
+                  type="button"
+                  onClick={handleSubmit}
                   className="signup-button"
                 >
                   SIGN UP
@@ -98,7 +145,7 @@ const SignUp = () => {
               </div>
               <MyVerticallyCenteredModal
                 show={modalShow}
-                onHide={() => setModalShow(false)}
+                onHide={handleModal}
                 props={email}
               />
             </Form>

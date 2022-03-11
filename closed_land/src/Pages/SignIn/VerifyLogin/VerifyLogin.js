@@ -1,9 +1,9 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import "./Verify.css";
-import EmailAnim from "../../../Components/Animations/EmailAnim/EmailAnim";
+import "./VerifyLogin.css";
+import Incorrect from "../../../Components/Animations/Incorrect/Incorrect";
 
-const Verify = (props) => {
+const VerifyLogin = (props) => {
   return (
     <Modal
       {...props}
@@ -14,17 +14,14 @@ const Verify = (props) => {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Check your email!
+          API Token is invalid.
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div>
-          <EmailAnim />
+          <Incorrect />
         </div>
-        <p>
-          We have sent an email to {props["props"]}! Please verify your email to
-          proceed.
-        </p>
+        <p>Please re-enter your api token.</p>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -33,4 +30,4 @@ const Verify = (props) => {
   );
 };
 
-export default Verify;
+export default VerifyLogin;

@@ -10,7 +10,6 @@ import Numbers from "./Numbers";
 import Ethcall from "../../Components/CombNav/Ethcall";
 import Typical from "react-typical";
 import { Button } from "react-bootstrap";
-import LogoCube from "../../Components/Cube/Cube";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = React.useState(false);

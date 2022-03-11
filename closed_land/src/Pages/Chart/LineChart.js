@@ -13,7 +13,7 @@ import {
 import { Line } from "react-chartjs-2";
 import annotationPlugin from "chartjs-plugin-annotation";
 import { withTheme } from "styled-components";
-import CarLoader from "../../Components/CarLoading/CarLoader";
+import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 
 chartJS.register(
   CategoryScale,
@@ -33,8 +33,6 @@ const LineChart = () => {
   // const [time, setTime] = useState(0);
   // let arr = [];
   // let quotes = [];
-
-  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
   // useEffect(() => {
   //   ws.onopen = function (evt) {
@@ -59,6 +57,8 @@ const LineChart = () => {
   // useEffect(() => {
   //   console.log(ethTick);
   // }, [ethTick]);
+
+  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
   const data = [];
   let quoteprice = []; //x-axis

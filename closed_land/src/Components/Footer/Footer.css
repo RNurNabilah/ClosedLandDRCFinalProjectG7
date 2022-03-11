@@ -100,8 +100,8 @@
   .contact-logo {
     margin: auto !important;
     /* width: 3rem !important; */
-    max-width: 30% !important;
-    max-height: 30% !important;
+    max-width: 20% !important;
+    max-height: 20% !important;
   }
 
   .contact-us {
@@ -333,3 +333,8 @@
 .footer-copyright {
   margin-bottom: 0 !important;
 }
+
+/* a:hover {
+  text-decoration: none;
+  color: #66cfcf !important;
+} */

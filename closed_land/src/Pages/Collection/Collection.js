@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "../../Components/Card";
 import Footer from "../../Components/Footer/Footer";
 import Ethcall from "../../Components/CombNav/Ethcall";
-// import Navbar from "../../Components/Navbar";
+import Navbar from "../../Components/Navbar";
 // import Sidebar from "../../Components/Sidebar";
 import Collapsable from "../../Components/Collapsable";
 import Collapsible from "react-collapsible";
@@ -20,8 +20,8 @@ const Collection = () => {
   return (
     <div className="collectionPage">
       <Ethcall />
-      {/* <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
+      {/* <Navbar toggle={toggleSidebar} /> */}
+      {/* <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <div className="banner"></div>
       <div className="collectionPicContainer">
         <img

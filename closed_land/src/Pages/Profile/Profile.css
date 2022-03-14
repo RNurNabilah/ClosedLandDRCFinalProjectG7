@@ -61,6 +61,24 @@
   text-align: center;
 }
 
+.profileContainer > .nav-link:focus,
+.nav-link:hover {
+  color: white !important;
+}
+
+.tabsScroll {
+  width: 100vw !important;
+  white-space: nowrap;
+  position: relative;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .username-date {
   padding-top: 0.5rem;
   color: white;
@@ -191,6 +209,14 @@
   flex-wrap: wrap;
 }
 
+.section-4-eight {
+  padding-top: 1rem;
+  display: flex;
+  /* grid-template-columns: repeat(4, 1fr); */
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .profile-display {
   width: 100%;
   display: flex;
@@ -312,6 +338,10 @@
     width: 10em !important;
   }
 
+  .tabsScroll {
+    width: 50vw !important;
+  }
+
   .profile-header {
     height: 40vh;
   }
@@ -330,6 +360,7 @@
     display: flex;
     width: 100%;
     border-bottom: 2px solid white;
+    padding-bottom: 1rem;
   }
 
   .myprofile {

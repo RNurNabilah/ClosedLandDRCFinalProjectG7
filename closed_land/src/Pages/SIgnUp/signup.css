@@ -187,7 +187,7 @@
   line-height: 30px;
   flex-direction: column;
   margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
   color: #ffffff;
 }
 
@@ -223,17 +223,24 @@
   color: #ffffff;
 }
 
-.signup-button:disabled,
-.signup-button[disabled],
-.signup-button:disabled:hover,
-.signup-button[disabled]:hover {
-  background-color: #cccccc !important;
-  color: #666666;
-}
-
 .signup-button:hover {
   background-color: #f8c101 !important;
   color: black;
+}
+
+.signup-button:disabled {
+  background-color: #556b75 !important;
+  color: #ffffff;
+}
+
+.alertSignUp {
+  position: fixed;
+  bottom: 0;
+  left: 1rem;
+}
+
+#passNoMatch {
+  color: #cb2d6f !important;
 }
 
 @media screen and (min-width: 625px) {

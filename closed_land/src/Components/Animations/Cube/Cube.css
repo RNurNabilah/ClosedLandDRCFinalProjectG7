@@ -44,8 +44,9 @@
   height: 200px;
   position: relative;
   transform-style: preserve-3d;
-  transform: translateZ(-100px) rotateX(360deg) !important;
+  transform: translateZ(-100px) rotateY(360deg) !important;
   transition: transform 5s;
+  cursor: pointer;
 }
 
 .cube.show-front {

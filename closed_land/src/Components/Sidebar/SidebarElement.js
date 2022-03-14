@@ -5,11 +5,7 @@ import { CgProfile } from "react-icons/cg";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
-<<<<<<< HEAD
   z-index: 10000;
-=======
-  z-index: 3000;
->>>>>>> 3d7164461b8d9fe1dec4abf688b17e97a17ae655
   width: 100%;
   height: 100%;
   background: #0d0d0d;

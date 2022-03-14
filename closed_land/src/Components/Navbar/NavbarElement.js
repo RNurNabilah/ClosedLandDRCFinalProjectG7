@@ -13,6 +13,8 @@ export const Nav = styled.nav`
   z-index: 2000;
   position: fixed;
   top: 0;
+  font-family: "Work Sans";
+  font-weight: 500;
 `;
 
 export const NavMobileLogo = styled.div`

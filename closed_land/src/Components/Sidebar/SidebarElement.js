@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
+<<<<<<< HEAD
+  z-index: 10000;
+=======
   z-index: 3000;
+>>>>>>> 3d7164461b8d9fe1dec4abf688b17e97a17ae655
   width: 100%;
   height: 100%;
   background: #0d0d0d;
@@ -15,10 +20,26 @@ export const SidebarContainer = styled.aside`
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
   top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
   transition: 0.3s ease-in-out;
+  font-family: "Work Sans";
+  font-weight: 600;
+`;
+
+export const ProfileIcon = styled(CgProfile)`
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  &:hover {
+    color: #f8c101;
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const CloseIcon = styled(FaTimes)`
   color: #fff;
+  &:hover {
+    color: red !important;
+    transition: 0.2s ease-in-out;
+  }
 `;
 
 export const NavEthereumContainer = styled.div`
@@ -46,6 +67,7 @@ export const SidebarWrapper = styled.div`
 
 export const SidebarMenu = styled.ul`
   display: grid;
+  flex-direction: column;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 80px);
   text-align: center;
@@ -70,7 +92,7 @@ export const SidebarLink = styled(LinkR)`
   cursor: pointer;
 
   &:hover {
-    color: #01df71;
+    color: #f8c101;
     transition: 0.2s ease-in-out;
   }
 `;

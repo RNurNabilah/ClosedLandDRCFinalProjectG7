@@ -2,20 +2,13 @@ import React, { useState } from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
-// import Navbar from "../../Components/Navbar";
-// import Sidebar from "../../Components/Sidebar";
 import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
 import { Alert } from "react-bootstrap";
-import {
-  InputGroup,
-  FormControl,
-  Button,
-  Container,
-  Form,
-} from "react-bootstrap";
+import { Button, Form, Tooltip, OverlayTrigger } from "react-bootstrap";
 import Footer from "../../Components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import VerifyLogin from "./VerifyLogin/VerifyLogin";
+import { RiQuestionFill, RiQuestionLine } from "react-icons/ri";
 
 const SignIn = () => {
   const signInLink =
@@ -65,6 +58,12 @@ const SignIn = () => {
   function navSignUp() {
     navigate("/signup");
   }
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Go to your 'Manage Your Account Settings' in Deriv website or click the
+      link below to create your api token!
+    </Tooltip>
+  );
 
   return (
     <div>
@@ -98,7 +97,19 @@ const SignIn = () => {
                 className="signInUsername mb-3"
                 controlId="formBasicToken"
               >
-                <Form.Label>API TOKEN</Form.Label>
+                <Form.Label>
+                  API TOKEN{" "}
+                  <OverlayTrigger
+                    placement="right"
+                    delay={{ show: 250, hide: 400 }}
+                    overlay={renderTooltip}
+                  >
+                    <Button className="questionSignIn">
+                      {" "}
+                      <RiQuestionFill />
+                    </Button>
+                  </OverlayTrigger>
+                </Form.Label>
                 <Form.Control
                   placeholder="Token"
                   type="text"
@@ -128,8 +139,11 @@ const SignIn = () => {
                 <Form.Check type="checkbox" label="Remember me" />
               </Form.Group>
               <div className="forgot-password">
-                <a href="https://deriv.com/reset-password/" target="_blank">
-                  Forgot Password?
+                <a
+                  href="https://app.deriv.com/account/api-token"
+                  target="_blank"
+                >
+                  Create an API Token
                 </a>
               </div>
               <div className="login-button-container">

@@ -23,7 +23,7 @@ const CandleStick = () => {
       rightOffset: 12,
       barSpacing: 3,
       fixLeftEdge: true,
-      lockVisibleTimeRangeOnResize: true,
+      // lockVisibleTimeRangeOnResize: true,
       rightBarStaysOnScroll: true,
       borderVisible: false,
       borderColor: "#fff000",
@@ -44,7 +44,6 @@ const CandleStick = () => {
     ws.onopen = function (evt) {
       switch (timeFrame) {
         case "1M":
-          setChartData([]);
           //   console.log(timeFrame);
           ws.send(
             JSON.stringify({
@@ -59,6 +58,7 @@ const CandleStick = () => {
           );
           break;
         case "5M":
+          ws.close();
           setChartData([]);
           //   console.log(timeFrame);
           ws.send(
@@ -75,7 +75,6 @@ const CandleStick = () => {
           );
           break;
         default:
-          setChartData([]);
           ws.send(
             JSON.stringify({
               ticks_history: "R_50",

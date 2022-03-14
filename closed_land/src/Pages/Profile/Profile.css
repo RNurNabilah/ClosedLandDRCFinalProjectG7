@@ -17,63 +17,14 @@
 
 .first-two {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media screen and (max-width: 760px) {
-  .section-2 {
-    display: flex;
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profileContainer {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .section-3 {
-    display: flex;
-    flex-direction: column !important;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .filter-button {
-    padding-top: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .profile-display {
-    margin-top: 1rem;
-    justify-content: center !important;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 762px) {
-  .tabs-container {
-    font-size: 90% !important;
-    width: 50vw !important;
-  }
-
-  .profile-header {
-    height: 40vh;
-  }
-}
-
-.section-2 {
-  margin-top: 1rem;
-  flex-direction: row;
+.profileImg {
   display: flex;
-  width: 100%;
-  border-bottom: 2px solid white;
+  justify-content: center;
 }
 
 .profile-img {
@@ -83,14 +34,12 @@
   height: 8rem;
   border: 3px solid #0a2a29;
   box-sizing: border-box;
-  border-radius: 40px;
+  border-radius: 50%;
 }
 
 .profile-name {
   flex-direction: column;
   justify-content: center;
-  margin-left: 1rem;
-  margin-top: 1rem;
 }
 
 .myprofile {
@@ -98,8 +47,9 @@
   font-family: Sora;
   font-style: normal;
   font-weight: bold;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin) !important;
   text-align: center;
+  width: 100%;
 }
 
 .profileContainer {
@@ -112,13 +62,17 @@
 }
 
 .username-date {
+  padding-top: 0.5rem;
   color: white;
+  justify-content: center;
+  text-align: center;
+}
+
+.username-date > h2 {
   font-family: Sora;
   font-style: normal;
   font-weight: bold;
-  font-size: calc(5px + 2vmin) !important;
-  justify-content: center;
-  margin-left: 1rem;
+  font-size: calc(10px + 1vmin) !important;
 }
 
 .mywallet {
@@ -132,13 +86,11 @@
 
 .my-wallet {
   text-align: center;
-  width: 10em;
+  width: 80vw !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /* margin-left: 3rem; */
-  margin-right: 1rem;
-  margin-top: 4rem;
 }
 
 .wallet-balance.container {
@@ -163,16 +115,6 @@
   font-style: normal;
   font-weight: bold;
   font-size: 1.2rem;
-}
-
-.wallet-reload.btn.btn-primary {
-  margin-top: 1rem;
-  text-align: center;
-  width: 91.63px;
-  /* height: 4vh; */
-  border-radius: 2em;
-  background-color: pink;
-  color: white;
 }
 
 .tabs-container {
@@ -220,19 +162,31 @@
 .profile-filter {
   font-family: Sora;
   font-weight: bold;
-  font-size: 0.6rem;
+  font-size: calc(5px + 1vmin) !important;
   width: 18vw;
   height: 4.85vh;
   margin-left: 0.6rem;
   margin-right: 0.6rem;
   border-radius: 10px;
-  background-color: #66fcf1;
+  border-width: 0;
+  background-color: #f8c101 !important;
+  color: black !important;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.section-4 {
+.profile-filter:hover {
+  color: #f8c101 !important;
+  background-color: black !important;
+}
+
+.profile-filter:focus {
+  box-shadow: 0 0 0 0.25rem rgb(248, 193, 1, 0.5) !important;
+}
+
+.section-4-four {
   padding-top: 1rem;
   display: flex;
+  /* grid-template-columns: repeat(4, 1fr); */
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -245,7 +199,7 @@
 }
 
 .sizing1-profile {
-  font-size: 0.6rem;
+  font-size: calc(5px + 1vmin) !important;
   font-family: Sora;
   font-weight: bold;
   color: black;
@@ -254,13 +208,15 @@
   align-items: center;
   width: 20vw;
   height: 4.85vh;
-  background-color: #66fcf1;
+  border: 1px solid black;
+  background-color: #f8c101 !important;
+  color: black !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 30px 0px 0px 30px;
 }
 
 .sizing2-profile {
-  font-size: 0.6rem;
+  font-size: calc(5px + 1vmin) !important;
   font-family: Sora;
   font-weight: bold;
   color: black;
@@ -269,10 +225,34 @@
   align-items: center;
   width: 20vw;
   height: 4.85vh;
-  background-color: #66fcf1;
+  border: 1px solid black;
+  background-color: #f8c101 !important;
+  color: black !important;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 30px 30px 0px;
   margin-right: 10px;
+}
+
+.sizing1-profile:hover,
+.sizing2-profile:hover {
+  background-color: black !important;
+  color: #f8c101 !important;
+}
+
+.section-3 > .search-mb-3 > .input-group-text {
+  background-color: #f8c101 !important;
+  border: 1px solid #f8c101 !important;
+}
+
+.section-3 > .search-mb-3 > .input-group-text > svg {
+  color: black;
+  stroke-width: 1rem;
+}
+
+.section-3 > .search-mb-3 > .form-control {
+  background-color: black;
+  color: #f8c101 !important;
+  border: 1px solid #f8c101;
 }
 
 @media (min-width: 426px) {
@@ -283,5 +263,80 @@
   .sizing1-profile,
   .sizing2-profile {
     width: 10vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .section-2 {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profileContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-3 {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .filter-button {
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-display {
+    margin-top: 1rem;
+    justify-content: center !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tabs-container {
+    font-size: 90% !important;
+    width: 50vw !important;
+  }
+  .my-wallet {
+    width: 10em !important;
+  }
+
+  .profile-header {
+    height: 40vh;
+  }
+
+  .first-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .section-2 {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid white;
+  }
+
+  .myprofile {
+    font-size: calc(10px + 2vmin) !important;
+  }
+
+  .profile-name {
+    padding-right: 1rem;
   }
 }

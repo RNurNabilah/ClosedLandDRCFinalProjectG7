@@ -13,6 +13,8 @@ import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
 import Explore from "./Pages/Explore/Explore";
 import WrongPage from "./Pages/WrongPage/WrongPage";
+import { useContext, useState, useEffect } from "react";
+import { UserContext } from "./Pages/SignIn/SignIn";
 
 // const options = {
 //   method: "GET",
@@ -109,8 +111,26 @@ import WrongPage from "./Pages/WrongPage/WrongPage";
 // };
 
 function App() {
+  const [user, setUser] = useState(useContext(UserContext));
+  const currUser = useContext(UserContext);
+
+  window.addEventListener("storage", () => {
+    console.log("change to local storage!");
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
+
+    console.log(user);
+  });
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
-    <div>
+    <UserContext.Provider value={user}>
       <BrowserRouter>
         <Switch>
           <Route path="/" element={<LandingPage />}></Route>
@@ -125,7 +145,7 @@ function App() {
           <Route path="*" element={<WrongPage />}></Route>
         </Switch>
       </BrowserRouter>
-    </div>
+    </UserContext.Provider>
 
     // <div className="App">
     //   <header className="App-header">

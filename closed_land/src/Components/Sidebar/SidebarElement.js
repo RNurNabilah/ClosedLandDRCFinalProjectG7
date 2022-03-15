@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { Button } from "react-bootstrap";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
@@ -114,7 +115,28 @@ export const SidebarRoute = styled(LinkR)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: #f8c101 !important;
+    color: black;
+  }
+`;
+
+export const SidebarLogoutButton = styled(Button)`
+  border-radius: 50px;
+  background: #ff2f00;
+  white-space: nowrap;
+  padding: 16px 64px;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #f8c101 !important;
+    color: black;
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
@@ -9,8 +9,10 @@ import "./signup.css";
 import { useNavigate } from "react-router-dom";
 import MyVerticallyCenteredModal from "./Verify/Verify";
 import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
+import { UserContext } from "../SignIn/SignIn";
 
 const SignUp = () => {
+  const user = useContext(UserContext);
   let navigate = useNavigate();
   const [modalShow, setModalShow] = useState(false);
   const [email, setEmail] = useState("");
@@ -22,9 +24,19 @@ const SignUp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [alert, setAlert] = useState(false);
   const [alertWrong, setAlertWrong] = useState(false);
+  // const user = useContext(UserContext);
+
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("user");
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setUser(foundUser);
+  //   }
+  // }, []);
 
   var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
+  console.log(user);
   function sendEmail() {
     ws.onopen = function (evt) {
       ws.send(
@@ -112,7 +124,6 @@ const SignUp = () => {
       }
     };
   }
-
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Go to your 'Manage Your Account Settings' in Deriv website or click the
@@ -254,6 +265,7 @@ const SignUp = () => {
             <Alert.Heading>Invalid verification code!</Alert.Heading>
           </Alert>
         </div>
+        {/* <span style={{ color: "white" }}>{user["authorize"]["fullname"]}</span> */}
       </div>
       <Footer></Footer>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   SidebarContainer,
   Icon,
@@ -10,10 +10,20 @@ import {
   SidebarMenu,
   NavEthereumContainer,
   ProfileIcon,
+  SidebarLogoutButton,
 } from "./SidebarElement";
 import { FaEthereum } from "react-icons/fa";
+import { UserContext } from "../../Pages/SignIn/SignIn";
 
 const Sidebar = (props) => {
+  const user = useContext(UserContext);
+
+  // logout the user
+  const handleLogout = () => {
+    window.location.reload(false);
+    localStorage.clear();
+  };
+
   // const [isOpen, setIsOpen] = React.useState(true);
   // const toggleSidebar = () => {
   //   setIsOpen(!isOpen);
@@ -43,13 +53,21 @@ const Sidebar = (props) => {
           <SidebarLink to="/explore">Explore</SidebarLink>
           <SidebarLink to="/stats">Stats</SidebarLink>
           <SidebarLink to="/aboutus">About Us</SidebarLink>
-          <SidebarLink to="/profile">
-            Profile
-            {/* <ProfileIcon type="button"></ProfileIcon> */}
-          </SidebarLink>
+          {user === undefined ? null : (
+            <SidebarLink to="/profile">
+              Profile
+              {/* <ProfileIcon type="button"></ProfileIcon> */}
+            </SidebarLink>
+          )}
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to="/signin">Sign Out</SidebarRoute>
+          {user === undefined ? (
+            <SidebarRoute to="/signin">Sign In</SidebarRoute>
+          ) : (
+            <SidebarLogoutButton onClick={handleLogout}>
+              Logout
+            </SidebarLogoutButton>
+          )}
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

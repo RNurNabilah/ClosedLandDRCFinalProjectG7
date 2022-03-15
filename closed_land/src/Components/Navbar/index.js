@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../images/Artboard.svg";
 import { FaEthereum } from "react-icons/fa";
 // import { CgProfile } from "react-icons/cg";
@@ -20,13 +20,23 @@ import {
   NavEthereoumLogo,
   NavPageLocation,
   ProfileIcon,
+  LogoutButton,
   // NavSearchBtn,
 } from "./NavbarElement";
+import { UserContext } from "../../Pages/SignIn/SignIn";
 // import Sidebar from "../../Components/Sidebar";
 
 const Navbar = ({ ethTick, toggle }) => {
   const [searchName, setSearchName] = React.useState("");
+  const user = useContext(UserContext);
+  console.log(user);
   // console.log("NavBar", ethTick);
+
+  // logout the user
+  const handleLogout = () => {
+    window.location.reload(false);
+    localStorage.clear();
+  };
 
   return (
     <div>
@@ -62,16 +72,22 @@ const Navbar = ({ ethTick, toggle }) => {
             <NavLink to="/aboutus">
               <NavPageLocation>About Us</NavPageLocation>
             </NavLink>
-            <NavLink to="/profile">
-              <ProfileIcon></ProfileIcon>
-            </NavLink>
+            {user === undefined ? null : (
+              <NavLink to="/profile">
+                <ProfileIcon></ProfileIcon>
+              </NavLink>
+            )}
           </NavEthereumContainer>
         </NavMenu>
         <NavMobileBars>
           <Bars onClick={toggle} />
         </NavMobileBars>
         <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          {user === undefined ? (
+            <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          ) : (
+            <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+          )}
         </NavBtn>
       </Nav>
     </div>

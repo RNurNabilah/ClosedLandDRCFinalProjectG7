@@ -69,7 +69,7 @@ const LineChart = () => {
 
   useEffect(() => {
     ws.onopen = function (evt) {
-      ws.send(JSON.stringify({ ticks: "R_50" }));
+      ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
     };
     //Fired when a connection with WebSocket is opened.
     ws.onmessage = function (evt) {
@@ -86,6 +86,10 @@ const LineChart = () => {
           ).toLocaleTimeString(),
         })
       );
+    };
+
+    return () => {
+      ws.close();
     };
   }, []);
 

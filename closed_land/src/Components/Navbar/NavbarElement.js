@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { Button } from "react-bootstrap";
 
 export const Nav = styled.nav`
   background: #0b0c10;
@@ -104,8 +105,7 @@ export const NavPageLocation = styled.span`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    // background: #e5dfe8;
-    color: #0d6efd;
+    color: rgb(255, 78, 152) !important;
   }
 
   @media screen and (max-width: 1300px) {
@@ -135,7 +135,11 @@ export const NavLink = styled(Link)`
   cursor: pointer;
 
   &.active {
-    color: #15cdfc;
+    color: rgb(255, 78, 152);
+  }
+
+  &.hover {
+    color: rgb(255, 78, 152) !important;
   }
 
   @media screen and (max-width: 845px) {
@@ -191,8 +195,45 @@ export const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+    background: #f8c101 !important;
+    color: black;
+  }
+
+  @media screen and (min-width: 1050px) {
+    margin-top: 0 !important;
+  }
+  @media screen and (max-width: 1300px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
+  }
+`;
+
+export const LogoutButton = styled(Button)`
+  border-radius: 4px;
+  background: #ff2f00;
+  padding: 10px 10px;
+  margin-top: 1rem;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #f8c101 !important;
+    color: black;
   }
 
   @media screen and (min-width: 1050px) {
@@ -288,6 +329,14 @@ export const NavHome = styled.h1`
   padding-top: 10px;
   color: #66cfcf;
 
+  &.hover {
+    color: rgb(255, 78, 152) !important;
+  }
+
+  &.active {
+    color: rgb(255, 78, 152);
+  }
+
   @media screen and (max-width: 1240px) {
   }
   // @media screen and (max-width: 1000px) {
@@ -372,4 +421,9 @@ export const ProfileIcon = styled(CgProfile)`
   // padding: 0 !important;
   position: absolute;
   margin: 0 15px;
+  color: #f8c101 !important;
+
+  &.hover {
+    color: rgb(255, 78, 152) !important;
+  }
 `;

@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
-import { icons } from "react-icons/lib";
+import { CgProfile } from "react-icons/cg";
 
 export const Nav = styled.nav`
   background: #0b0c10;
@@ -28,9 +28,9 @@ export const NavMobileBars = styled.div`
   display: none;
   @media screen and (max-width: 845px) {
     display: flex;
-    align-items: center;
+    grid-column: 6 / 6;
     justify-content: flex-end;
-    grid-column: 3 / 6;
+    margin-right: 12%;
   }
 `;
 
@@ -64,6 +64,7 @@ export const NavEthereumContainer = styled.div`
   }
   @media screen and (max-width: 1240px) {
     font-size: 14px;
+    // padding: 5px !important;
   }
   @media screen and (max-width: 860px) {
     font-size: 12px;
@@ -170,7 +171,7 @@ export const NavSearch = styled.input`
     height: 30px;
     font-size: 12px;
   }
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 870px) {
     width: 150px;
     height: 30px;
     font-size: 10px;
@@ -181,7 +182,7 @@ export const NavBtnLink = styled(Link)`
   border-radius: 4px;
   background: #ff2f00;
   padding: 10px 10px;
-  // margin-top: 1rem;
+  margin-top: 1rem;
   color: #fff;
   border: none;
   outline: none;
@@ -194,6 +195,9 @@ export const NavBtnLink = styled(Link)`
     color: #010606;
   }
 
+  @media screen and (min-width: 1050px) {
+    margin-top: 0 !important;
+  }
   @media screen and (max-width: 1300px) {
     font-size: 18px;
   }
@@ -279,16 +283,16 @@ export const NavSpan = styled.h1`
 //     0 0 151px #0fa;
 
 export const NavHome = styled.h1`
-  font-size: 25px !important;
+  font-size: 20px !important;
   font-weight: bold;
   padding-top: 10px;
   color: #66cfcf;
 
   @media screen and (max-width: 1240px) {
   }
-  @media screen and (max-width: 1000px) {
-    font-size: 25px !important;
-  }
+  // @media screen and (max-width: 1000px) {
+  //   font-size: 25px !important;
+  // }
   @media screen and (max-width: 885px) {
     font-size: 20px !important;
   }
@@ -320,16 +324,16 @@ export const NavImage = styled.img`
   border-radius: 9rem;
 
   @media screen and (max-width: 1240px) {
-    height: 70px;
-    width: 70px;
-  }
-  @media screen and (max-width: 1000px) {
     height: 60px;
     width: 60px;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1000px) {
     height: 50px;
     width: 50px;
+  }
+  @media screen and (max-width: 800px) {
+    height: 40px;
+    width: 40px;
   }
 `;
 
@@ -348,9 +352,10 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: flex-end;
   margin-left: 30px;
-  padding-left: 20px;
+  padding-left: 10px;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+
   @media screen and (max-width: 1050px) {
     font-size: 10px;
     height: 30%;
@@ -359,4 +364,12 @@ export const NavBtn = styled.nav`
   @media screen and (max-width: 845px) {
     display: none;
   }
+`;
+
+export const ProfileIcon = styled(CgProfile)`
+  width: 35px;
+  height: 35px;
+  // padding: 0 !important;
+  position: absolute;
+  margin: 0 15px;
 `;

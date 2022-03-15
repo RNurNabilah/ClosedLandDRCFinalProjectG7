@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../images/Artboard.svg";
 import { FaEthereum } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
+// import { CgProfile } from "react-icons/cg";
 // import Search from "../Search";
 import {
   NavLink,
@@ -19,6 +19,7 @@ import {
   NavEthereoumText,
   NavEthereoumLogo,
   NavPageLocation,
+  ProfileIcon,
   // NavSearchBtn,
 } from "./NavbarElement";
 // import Sidebar from "../../Components/Sidebar";
@@ -39,7 +40,7 @@ const Navbar = ({ ethTick, toggle }) => {
         </NavMobileLogo>
         <NavMenu>
           <NavEthereumContainer>
-            <NavLink to="/chart">
+            <NavLink to="/chart" style={{ padding: "5px" }}>
               1 <FaEthereum className="eth"></FaEthereum>
               {" = " + ethTick + " USD"}
             </NavLink>
@@ -61,7 +62,9 @@ const Navbar = ({ ethTick, toggle }) => {
             <NavLink to="/aboutus">
               <NavPageLocation>About Us</NavPageLocation>
             </NavLink>
-            <CgProfile className="cgProfile"></CgProfile>
+            <NavLink to="/profile">
+              <ProfileIcon></ProfileIcon>
+            </NavLink>
           </NavEthereumContainer>
         </NavMenu>
         <NavMobileBars>

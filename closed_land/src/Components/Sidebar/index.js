@@ -35,7 +35,7 @@ const Sidebar = (props) => {
       <SidebarWrapper>
         <SidebarMenu>
           <NavEthereumContainer>
-            <SidebarLink to="/chart">
+            <SidebarLink to="/chart" style={{ fontSize: "30px" }}>
               1 <FaEthereum className="eth"></FaEthereum>
               {" = " + props.ethTick + " USD"}
             </SidebarLink>
@@ -43,7 +43,10 @@ const Sidebar = (props) => {
           <SidebarLink to="/explore">Explore</SidebarLink>
           <SidebarLink to="/stats">Stats</SidebarLink>
           <SidebarLink to="/aboutus">About Us</SidebarLink>
-          <ProfileIcon type="button"></ProfileIcon>
+          <SidebarLink to="/profile">
+            Profile
+            {/* <ProfileIcon type="button"></ProfileIcon> */}
+          </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign Out</SidebarRoute>

@@ -60,15 +60,20 @@ const Footer = (props) => {
           <FormControl
             onChange={handleChange}
             name="message"
+            // value={email}
             placeholder="Email"
-            aria-label="Email"
+            // aria-label="Email"
             aria-describedby="basic-addon2"
+            // pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            required
+            // <h4> Please enter valid email </h4>
           />
-          <Button onClick={handleSubmit} type="submit" id="button-addon2">
-            {/* <span
-                class=" glyphicon glyphicon-arrow-right"
-                aria-hidden="true"
-              ></span> */}
+          <Button
+            onClick={handleSubmit}
+            disabled={!sendFeedback}
+            type="submit"
+            id="button-addon2"
+          >
             Send
           </Button>
         </InputGroup>

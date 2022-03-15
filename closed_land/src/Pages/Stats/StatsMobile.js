@@ -10,13 +10,13 @@ const StatsMobile = (props) => {
     return 0;
   });
 
+  console.log(props);
   let collectionsStats = array[0][1];
 
   const [key, setKey] = useState(null);
   const [dropDownText, setDropDownText] = useState("24 Hour %");
 
   const [data, setData] = useState(collectionsStats);
-  console.log(collectionsStats);
 
   useEffect(() => {}, [data]);
 

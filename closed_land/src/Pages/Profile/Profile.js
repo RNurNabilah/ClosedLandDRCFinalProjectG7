@@ -31,10 +31,46 @@ const testData = [
   {
     ID: 1,
     collection: "Hello Word",
-    collectionName: 5,
+    collectionName: "hi",
     imageSource:
       "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
+    collectionPrice: 30,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "i",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 2,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "z",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 12,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "d",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 10,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "c",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 2,
     scoreRating: 5,
   },
   {
@@ -43,7 +79,7 @@ const testData = [
     collectionName: 5,
     imageSource:
       "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
+    collectionPrice: 1,
     scoreRating: 5,
   },
   {
@@ -52,7 +88,25 @@ const testData = [
     collectionName: 5,
     imageSource:
       "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
+    collectionPrice: 3,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "b",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 19,
+    scoreRating: 5,
+  },
+  {
+    ID: 1,
+    collection: "Hello Word",
+    collectionName: "a",
+    imageSource:
+      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
+    collectionPrice: 4,
     scoreRating: 5,
   },
   {
@@ -61,74 +115,53 @@ const testData = [
     collectionName: 5,
     imageSource:
       "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
-    scoreRating: 5,
-  },
-  {
-    ID: 1,
-    collection: "Hello Word",
-    collectionName: 5,
-    imageSource:
-      "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png",
-    collectionPrice: "1 ETH",
+    collectionPrice: 8,
     scoreRating: 5,
   },
 ];
 
 const Profile = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [sort, setSort] = useState("four");
+  const [tab, setTab] = useState("favorited");
+
+  let profileData = testData.sort((x, y) => {
+    let a = x.collectionName.toString().toUpperCase(),
+      b = y.collectionName.toString().toUpperCase();
+    return a == b ? 0 : a > b ? 1 : -1;
+  });
+
+  const [data, setData] = useState(profileData);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  function fourByFour() {}
+  function sortCards(text) {
+    let arr;
+    switch (text) {
+      case "name":
+        arr = [...profileData].sort((x, y) => {
+          let a = x.collectionName.toString().toUpperCase(),
+            b = y.collectionName.toString().toUpperCase();
+          return a == b ? 0 : a > b ? 1 : -1;
+        });
+        setData(arr);
+        break;
+      case "price":
+        arr = [...profileData].sort((b, a) => {
+          if (a.collectionPrice > b.collectionPrice) return 1;
+          if (a.collectionPrice < b.collectionPrice) return -1;
+          return 0;
+        });
+        setData(arr);
+        break;
+      default:
+        break;
+    }
+  }
+
+  useEffect(() => {}, [data]);
 
   return (
     <div>
@@ -165,9 +198,10 @@ const Profile = () => {
           </div>
           <div className="profileContainer">
             <Tabs
-              defaultActiveKey="profile"
               id="uncontrolled-tab-example"
               className="tabs-container mb-3"
+              activeKey={tab}
+              onSelect={(k) => setTab(k)}
             >
               <Tab
                 eventKey="favorited"
@@ -178,11 +212,14 @@ const Profile = () => {
                   </span>
                 }
               >
-                <Container>
+                <div className="tabsScroll">
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
-                </Container>
+                  <img className="fav-nft" src={picture1} alt="png" />
+                  <img className="fav-nft" src={picture1} alt="png" />
+                  <img className="fav-nft" src={picture1} alt="png" />
+                </div>
               </Tab>
               <Tab
                 eventKey="collected"
@@ -192,11 +229,10 @@ const Profile = () => {
                   </span>
                 }
               >
-                <Container>
+                <div className="tabsScroll">
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
-                  <img className="fav-nft" src={picture1} alt="png" />
-                </Container>
+                </div>
               </Tab>
               <Tab
                 eventKey="watchlist"
@@ -206,12 +242,12 @@ const Profile = () => {
                   </span>
                 }
               >
-                <Container>
+                <div className="tabsScroll">
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
                   <img className="fav-nft" src={picture1} alt="png" />
-                </Container>
+                </div>
               </Tab>
             </Tabs>
           </div>
@@ -229,16 +265,22 @@ const Profile = () => {
           </InputGroup>
           <Container className="filter-button">
             <div>
-              <button className="profile-filter">Price</button>
+              <button
+                type="button"
+                className="profile-filter"
+                onClick={() => sortCards("name")}
+              >
+                Name
+              </button>
             </div>
             <div>
-              <button className="profile-filter">Price</button>
-            </div>
-            <div>
-              <button className="profile-filter">Price</button>
-            </div>
-            <div>
-              <button className="profile-filter">Price</button>
+              <button
+                type="button"
+                className="profile-filter"
+                onClick={() => sortCards("price")}
+              >
+                Price
+              </button>
             </div>
           </Container>
           <div className="profile-display">
@@ -258,23 +300,21 @@ const Profile = () => {
             </button>
           </div>
         </div>
-        {sort === "four" ? (
-          <div className="section-4-four">
-            {testData.map((nft, index) => {
-              return (
-                <Card
-                  key={index}
-                  ID={nft["ID"]}
-                  collection={nft["collection"]}
-                  collectionName={nft["collectionName"]}
-                  imageSource={nft["imageSource"]}
-                  collectionPrice={nft["collectionPrice"]}
-                  scoreRating={nft["scoreRating"]}
-                />
-              );
-            })}
-          </div>
-        ) : null}
+        <div className="section-4-four">
+          {data.map((nft, index) => {
+            return (
+              <Card
+                key={index}
+                ID={nft.ID}
+                collection={nft.collection}
+                collectionName={nft.collectionName}
+                imageSource={nft.imageSource}
+                collectionPrice={nft.collectionPrice}
+                scoreRating={nft.scoreRating}
+              />
+            );
+          })}
+        </div>
       </div>
       <Footer />
     </div>

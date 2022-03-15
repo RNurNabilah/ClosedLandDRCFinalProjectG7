@@ -3,6 +3,7 @@ import Chart from "@qognicafinance/react-lightweight-charts";
 import useState from "react-usestateref";
 import { Tabs, Tab } from "react-bootstrap";
 import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
+import { FaBullseye } from "react-icons/fa";
 
 const CandleStick = () => {
   const arr = [];
@@ -15,18 +16,19 @@ const CandleStick = () => {
 
   const [history, setHistory, refRealHistory] = useState([]);
   const [chartData, setChartData] = useState([]);
-  const [timeFrame, setTimeFrame] = useState("1M");
+  const [timeFrame, setTimeFrame] = useState(60);
+  const [isLoading, setIsLoading] = useState(false);
 
   const options = {
     alignLabels: true,
     timeScale: {
-      rightOffset: 12,
-      barSpacing: 3,
-      fixLeftEdge: true,
-      // lockVisibleTimeRangeOnResize: true,
-      rightBarStaysOnScroll: true,
-      borderVisible: false,
-      borderColor: "#fff000",
+      // rightOffset: 12,
+      // barSpacing: 3,
+      // fixLeftEdge: true,
+      // // lockVisibleTimeRangeOnResize: true,
+      // rightBarStaysOnScroll: true,
+      // borderVisible: false,
+      // borderColor: "#fff000",
       visible: true,
       timeVisible: true,
       secondsVisible: true,
@@ -40,59 +42,28 @@ const CandleStick = () => {
       dateFormat: "dd/MM/yyyy",
     },
   };
+
   useEffect(() => {
+    setIsLoading(true);
     ws.onopen = function (evt) {
-      switch (timeFrame) {
-        case "1M":
-          //   console.log(timeFrame);
-          ws.send(
-            JSON.stringify({
-              ticks_history: "R_50",
-              adjust_start_time: 1,
-              count: 5000,
-              end: "latest",
-              start: 1,
-              style: "candles",
-              subscribe: 1,
-            })
-          );
-          break;
-        case "5M":
-          ws.close();
-          setChartData([]);
-          //   console.log(timeFrame);
-          ws.send(
-            JSON.stringify({
-              ticks_history: "R_50",
-              adjust_start_time: 1,
-              count: 5000,
-              end: "latest",
-              start: 1,
-              style: "candles",
-              subscribe: 1,
-              granularity: 300,
-            })
-          );
-          break;
-        default:
-          ws.send(
-            JSON.stringify({
-              ticks_history: "R_50",
-              adjust_start_time: 1,
-              count: 5000,
-              end: "latest",
-              start: 1,
-              style: "candles",
-              subscribe: 1,
-            })
-          );
-          break;
-      }
+      ws.send(
+        JSON.stringify({
+          ticks_history: "R_50",
+          adjust_start_time: 1,
+          count: 5000,
+          end: "latest",
+          start: 1,
+          style: "candles",
+          subscribe: 1,
+          granularity: timeFrame,
+        })
+      );
     };
 
     //Fired when a connection with WebSocket is opened.
     ws.onmessage = function (msg) {
       let data = JSON.parse(msg.data);
+      console.log(data);
       if (data.candles) {
         arr.push(data.candles.slice(0, -1));
         setHistory(
@@ -128,38 +99,41 @@ const CandleStick = () => {
           currTime = data.ohlc.open_time;
         }
       }
+
+      setIsLoading(false);
     };
+
     return () => {
       ws.close();
     };
-  }, []);
+  }, [timeFrame]);
 
   //   console.log(timeFrame);
 
   //   console.log(chartData);
   return (
     <div className="candleStickChart">
-      <Tabs id="uncontrolled-tab-example" className="main-bar">
-        <Tab
-          eventKey="1M"
-          title="1M"
-          id="tabCS"
-          onClick={(e) => console.log(e.target.textContent)}
-        />
-        <Tab eventKey="5M" title="5M" />
-        <Tab eventKey="15M" title="15M" />
-        <Tab eventKey="30M" title="30M" />
-        <Tab eventKey="1H" title="1H" />
-        <Tab eventKey="2H" title="2H" />
-        <Tab eventKey="4H" title="4H" />
-        <Tab eventKey="8H" title="8H" />
-        <Tab eventKey="24H" title="24H" />
+      <Tabs
+        id="uncontrolled-tab-example"
+        activeKey={timeFrame}
+        className="main-bar"
+        onSelect={(k) => setTimeFrame(k)}
+      >
+        <Tab eventKey={60} title="1M" />
+        <Tab eventKey={300} title="5M" />
+        <Tab eventKey={900} title="15M" />
+        <Tab eventKey={1800} title="30M" />
+        <Tab eventKey={3600} title="1H" />
+        <Tab eventKey={7200} title="2H" />
+        <Tab eventKey={14400} title="4H" />
+        <Tab eventKey={28800} title="8H" />
+        <Tab eventKey={86400} title="24H" />
         {/* <div className='title'>Date Range </div> */}
       </Tabs>
 
       <div className="innerCandle">
         {/* {console.log(chartData)} */}
-        {chartData.length === 0 ? <CarLoader /> : null}
+        {chartData.length === 0 || isLoading === true ? <CarLoader /> : null}
         <Chart
           options={options}
           candlestickSeries={[

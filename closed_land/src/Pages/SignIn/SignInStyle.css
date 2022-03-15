@@ -205,6 +205,10 @@
   background-color: #f8c101 !important;
   color: black;
 }
+.login-button:disabled {
+  background-color: #556b75 !important;
+  color: #ffffff;
+}
 
 @media screen and (min-width: 625px) {
   .signin-container {

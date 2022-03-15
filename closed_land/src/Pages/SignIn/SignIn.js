@@ -147,7 +147,12 @@ const SignIn = () => {
                 </a>
               </div>
               <div className="login-button-container">
-                <button type="button" className="login-button" onClick={login}>
+                <button
+                  type="button"
+                  className="login-button"
+                  onClick={login}
+                  disabled={token === ""}
+                >
                   LOGIN
                 </button>
               </div>

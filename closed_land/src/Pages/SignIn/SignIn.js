@@ -55,13 +55,6 @@ const SignIn = () => {
     }
   }
 
-  // logout the user
-  const handleLogout = () => {
-    setUser();
-    window.location.reload(false);
-    localStorage.clear();
-  };
-
   function handleModal() {
     setShowModal(false);
     let frm = document.getElementById("formBasicToken");
@@ -190,12 +183,6 @@ const SignIn = () => {
             ) : null}
           </Alert>
         </div>
-        {currUser ? (
-          <div style={{ color: "white" }}>
-            {currUser["authorize"]["fullname"]}
-            <button onClick={handleLogout}>logout</button>
-          </div>
-        ) : null}
       </div>
       <Footer />
     </div>

@@ -36,6 +36,7 @@ const SignUp = () => {
 
   var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
+  console.log(user);
   function sendEmail() {
     ws.onopen = function (evt) {
       ws.send(
@@ -123,9 +124,6 @@ const SignUp = () => {
       }
     };
   }
-
-  console.log(user);
-
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Go to your 'Manage Your Account Settings' in Deriv website or click the

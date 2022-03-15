@@ -110,6 +110,33 @@ const Explore = () => {
       });
   }, []);
 
+  const slugNames = [
+    "boredapeyachtclub",
+    "doodles-official",
+    "meebits",
+    "cryptopunks",
+    "azuki",
+    "kaiju-kingz",
+    "gutter-juice",
+    "ilyyw",
+    "snoop-dogg-doggies",
+    "thehabibiz",
+    "cryptohasbi",
+  ];
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.opensea.io/api/v1/collection/boredapeyachtclub",
+        options
+      )
+      .then((res) => {
+        console.log(res.data);
+        // collectionsExample.push(res.data);
+        // console.log(collectionsExample);
+      });
+  }, []);
+
   return (
     <div>
       {/* <Navbar></Navbar> */}

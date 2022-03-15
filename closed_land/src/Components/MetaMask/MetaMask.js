@@ -14,7 +14,7 @@ const MetaMask = () => {
     );
 
   if (status === "unavailable")
-    return <div className="metaMaskDiv">MetaMask not available :(</div>;
+    return <div className="metaMaskDiv">Install MetaMask...</div>;
 
   if (status === "notConnected")
     return (

@@ -3,7 +3,6 @@ import Chart from "@qognicafinance/react-lightweight-charts";
 import useState from "react-usestateref";
 import { Tabs, Tab } from "react-bootstrap";
 import CarLoader from "../../Components/Animations/CarLoading/CarLoader";
-import { FaBullseye } from "react-icons/fa";
 
 const CandleStick = () => {
   const arr = [];
@@ -15,7 +14,7 @@ const CandleStick = () => {
   var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
   const [history, setHistory, refRealHistory] = useState([]);
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData, refChartData] = useState([]);
   const [timeFrame, setTimeFrame] = useState(60);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,9 +23,10 @@ const CandleStick = () => {
     timeScale: {
       // rightOffset: 12,
       // barSpacing: 3,
-      // fixLeftEdge: true,
+      fixLeftEdge: true,
+      fixRightEdge: true,
       // // lockVisibleTimeRangeOnResize: true,
-      // rightBarStaysOnScroll: true,
+      rightBarStaysOnScroll: true,
       // borderVisible: false,
       // borderColor: "#fff000",
       visible: true,
@@ -46,11 +46,12 @@ const CandleStick = () => {
   useEffect(() => {
     setIsLoading(true);
     ws.onopen = function (evt) {
+      console.log("hi");
       ws.send(
         JSON.stringify({
-          ticks_history: "R_50",
+          ticks_history: "cryETHUSD",
           adjust_start_time: 1,
-          count: 5000,
+          count: 90000,
           end: "latest",
           start: 1,
           style: "candles",
@@ -63,7 +64,7 @@ const CandleStick = () => {
     //Fired when a connection with WebSocket is opened.
     ws.onmessage = function (msg) {
       let data = JSON.parse(msg.data);
-      console.log(data);
+      // console.log(data);
       if (data.candles) {
         arr.push(data.candles.slice(0, -1));
         setHistory(
@@ -77,16 +78,17 @@ const CandleStick = () => {
             };
           })
         );
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         currTime = data.candles[data.candles.length - 1].epoch;
       } else {
         if (currTime === data.ohlc.open_time) {
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           currohlc = {
-            time: data.ohlc.epoch,
-            open: data.ohlc.open,
-            high: data.ohlc.high,
-            low: data.ohlc.low,
-            close: data.ohlc.close,
+            time: parseInt(data.ohlc.epoch),
+            open: parseFloat(data.ohlc.open),
+            high: parseFloat(data.ohlc.high),
+            low: parseFloat(data.ohlc.low),
+            close: parseFloat(data.ohlc.close),
           };
 
           let cArr = refRealHistory.current.concat(
@@ -110,7 +112,8 @@ const CandleStick = () => {
 
   //   console.log(timeFrame);
 
-  //   console.log(chartData);
+  // console.log(refChartData.current);
+
   return (
     <div className="candleStickChart">
       <Tabs

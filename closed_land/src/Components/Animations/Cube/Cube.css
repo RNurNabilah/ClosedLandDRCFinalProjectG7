@@ -16,6 +16,7 @@
   padding: 0;
   transform: translateZ(-100px) rotateY(360deg) !important;
   transition: transform 10s !important;
+  pointer-events: auto;
 }
 
 .cubeComponent2 {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
 import Ethcall from "../../Components/CombNav/Ethcall";
@@ -10,6 +10,8 @@ import { useNavigate } from "react-router-dom";
 import VerifyLogin from "./VerifyLogin/VerifyLogin";
 import { RiQuestionFill, RiQuestionLine } from "react-icons/ri";
 
+export const UserContext = createContext();
+
 const SignIn = () => {
   const signInLink =
     "https://oauth.deriv.com/oauth2/authorize?app_id=16929&l=en&brand=deriv&date_first_contact=2022-01-28&signup_device=desktop&utm_source=null&platform=";
@@ -18,6 +20,9 @@ const SignIn = () => {
   const [showModal, setShowModal] = useState(false);
   const [alert, setAlert] = useState(false);
   const [token, setToken] = useState("");
+  const [user, setUser] = useState();
+  const currUser = useContext(UserContext);
+
   var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
   function login() {
@@ -34,7 +39,11 @@ const SignIn = () => {
       //Fired when a connection with WebSocket is opened.
       ws.onmessage = function (msg) {
         const data = JSON.parse(msg.data);
-        console.log(data);
+        // console.log(data);
+        setUser(data);
+        localStorage.setItem("user", JSON.stringify(data));
+        window.dispatchEvent(new Event("storage"));
+        console.log(user);
         if (!("error" in data) === false) {
           setIsLoading(false);
           setShowModal(true);
@@ -45,6 +54,13 @@ const SignIn = () => {
       };
     }
   }
+
+  // logout the user
+  const handleLogout = () => {
+    setUser();
+    window.location.reload(false);
+    localStorage.clear();
+  };
 
   function handleModal() {
     setShowModal(false);
@@ -111,7 +127,6 @@ const SignIn = () => {
                   </OverlayTrigger>
                 </Form.Label>
                 <Form.Control
-                  placeholder="Token"
                   type="text"
                   placeholder="Enter API Token"
                   value={token}
@@ -142,6 +157,7 @@ const SignIn = () => {
                 <a
                   href="https://app.deriv.com/account/api-token"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Create an API Token
                 </a>
@@ -167,9 +183,19 @@ const SignIn = () => {
             onClose={() => setAlert(false)}
             dismissible
           >
-            <Alert.Heading>Successfully Logged In!</Alert.Heading>
+            {currUser ? (
+              <Alert.Heading>
+                Welcome {currUser["authorize"]["fullname"]}!
+              </Alert.Heading>
+            ) : null}
           </Alert>
         </div>
+        {currUser ? (
+          <div style={{ color: "white" }}>
+            {currUser["authorize"]["fullname"]}
+            <button onClick={handleLogout}>logout</button>
+          </div>
+        ) : null}
       </div>
       <Footer />
     </div>

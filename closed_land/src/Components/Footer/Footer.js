@@ -19,64 +19,96 @@ import {
   faRocketchat,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { send } from "@emailjs/browser";
 
-const initialFormData = Object.freeze({
-  message: "",
-});
+// UserID: "D-ltMhhZjgNMmY9Zs"
+// ServiceID: "service_q7gksxc"
+// TemplateID: "template_edogtjl"
 
-const Footer = (props) => {
-  const [formData, updateFormData] = React.useState(initialFormData);
+const Footer = () => {
+  const [sender_email, set_sender_email] = React.useState("");
 
-  const sendFeedback = (serviceID, templateId, variables) => {
-    window.emailjs
-      .send(serviceID, templateId, variables)
-      .then((res) => {
-        console.log("Email successfully sent!");
-      })
-      .catch((err) => console.error("There has been an error.", err));
-  };
-  const handleChange = (e) => {
-    updateFormData({
-      ...formData,
-
-      [e.target.name]: e.target.value.trim(),
-    });
+  const handleEmail = (e) => {
+    set_sender_email(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const sendMail = (e) => {
     e.preventDefault();
-    alert(`Thank you for connecting.`);
-    const templateId = "template_edogtjl";
-    const serviceID = "service_f0a5iyg";
-    sendFeedback(serviceID, templateId, { message: formData.query });
-
-    console.log(formData);
+    send(
+      "service_q7gksxc",
+      "template_edogtjl",
+      { sender_email },
+      "D-ltMhhZjgNMmY9Zs"
+    )
+      .then((response) => {
+        console.log(
+          "Message sent successfully",
+          response.status,
+          response.text
+        );
+      })
+      .catch((err) => {
+        console.log("Failed to send message", err);
+      });
+    // set_sender_email("");
   };
+  // const form = React.useRef();
+
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+
+  //   emailjs
+  //     .sendForm(
+  //       "service_q7gksxc",
+  //       "template_edogtjl",
+  //       form.current,
+  //       "D-ltMhhZjgNMmY9Zs"
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   // e.target.reset();
+  // };
 
   return (
     <div className="main-footer">
       <Row className="email-inputgroup">
-        <InputGroup>
-          <FormControl
-            onChange={handleChange}
-            name="message"
-            // value={email}
-            placeholder="Email"
-            // aria-label="Email"
-            aria-describedby="basic-addon2"
-            // pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        <form className="email-form" onSubmit={sendMail}>
+          <input
+            type="email"
+            name="sender_email"
+            value={sender_email}
+            onChange={handleEmail}
             required
-            // <h4> Please enter valid email </h4>
+            placeholder="Email"
+          />
+          <button className="email-button" type="submit">
+            {" "}
+            Subscribe
+          </button>
+        </form>
+        {/* <InputGroup>
+          <FormControl
+            name="email"
+            placeholder="Email"
+            aria-describedby="basic-addon2"
+            // required
           />
           <Button
-            onClick={handleSubmit}
-            disabled={!sendFeedback}
+            // ref={form}
+            onClick={sendEmail}
+            // disabled={!sendFeedback}
             type="submit"
             id="button-addon2"
           >
             Send
           </Button>
-        </InputGroup>
+        </InputGroup> */}
         <div className="alltorow-container">
           <div className="left-container">
             <div className="iconandname">

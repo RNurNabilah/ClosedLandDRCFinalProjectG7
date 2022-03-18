@@ -1,10 +1,26 @@
 @media (max-width: 320px) {
   .employee {
-    padding: 1em;
+    padding: 1em !important;
   }
 
-  .emp-name {
-    font-size: 1rem;
+  #columntorow {
+    padding: 1.5rem 1.5rem 0 1.5rem !important;
+  }
+
+  #columntorow1 {
+    padding: 0 1.5rem 0 1.5rem !important;
+  }
+
+  #columntorow2 {
+    padding: 0 1.5rem 0 1.5rem !important;
+  }
+
+  .emp-icon {
+    width: 50px !important;
+  }
+
+  .employee-title {
+    font-size: 16px !important;
   }
 
   .mis-describe {
@@ -177,6 +193,7 @@
   #emp-img {
     flex-direction: row;
     /* display: flex; */
+    /* justify-content: center; */
     margin: auto !important;
     width: 50rem !important;
   }
@@ -386,7 +403,7 @@
 }
 
 .employee-title {
-  font-size: 20px !important;
+  font-size: 20px;
   padding-bottom: 1rem;
   font-family: Sora !important;
   font-weight: 600 !important;
@@ -400,18 +417,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto !important;
+  height: auto;
   width: 70%;
   margin: auto;
   padding-bottom: 10px;
 }
-
-/* #columntorow {
-    display: flex;
-  flex-direction: row;
-
-} */
-
-/* #emp-name {
-
-} */

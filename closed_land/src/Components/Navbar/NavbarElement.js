@@ -67,7 +67,7 @@ export const NavEthereumContainer = styled.div`
     font-size: 14px;
     // padding: 5px !important;
   }
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1000px) {
     font-size: 12px;
   }
 `;
@@ -175,7 +175,7 @@ export const NavSearch = styled.input`
     height: 30px;
     font-size: 12px;
   }
-  @media screen and (max-width: 870px) {
+  @media screen and (max-width: 1000px) {
     width: 150px;
     height: 30px;
     font-size: 10px;

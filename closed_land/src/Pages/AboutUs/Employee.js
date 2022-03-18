@@ -25,7 +25,7 @@ function Employee() {
               <h5 id="emp-name">Raja</h5>
             </div>
           </Col>
-          <Col id="columntorow">
+          <Col id="columntorow1">
             <div data-aos="zoom-in">
               <img className="emp-icon" src={suisin} alt="suisin" />
               <h5 id="emp-name">Suisin</h5>
@@ -35,7 +35,7 @@ function Employee() {
               <h5 id="emp-name">Luqman</h5>
             </div>
           </Col>
-          <Col id="columntorow">
+          <Col id="columntorow2">
             <div data-aos="zoom-in">
               <img className="emp-icon" src={amira} alt="amira" />
               <h5 id="emp-name">Amira</h5>

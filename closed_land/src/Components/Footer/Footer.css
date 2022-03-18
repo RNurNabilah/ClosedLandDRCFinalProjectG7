@@ -114,6 +114,7 @@
   .alltorow-container {
     display: flex;
     justify-content: center;
+    height: 250px;
     /* align-items: center; */
     /* margin-left: auto;
     margin-right: auto; */
@@ -132,8 +133,8 @@
     display: grid;
     align-items: center;
     margin: 0.5rem !important;
-    width: 6rem !important;
-    height: 6rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   #footer-describe {
@@ -170,6 +171,7 @@
   .cu {
     font-size: 2rem;
     /* padding: 15px; */
+    margin-bottom: 1rem !important;
   }
 
   .footer-contact-number {
@@ -205,7 +207,15 @@
   font-weight: 800 !important;
 }
 
-#button-addon2 {
+.email-form {
+  justify-content: center;
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.email-button {
   position: inherit;
   z-index: 0;
   background-color: #c4c4c4;

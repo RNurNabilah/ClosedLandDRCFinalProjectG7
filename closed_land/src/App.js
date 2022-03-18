@@ -15,6 +15,7 @@ import Explore from "./Pages/Explore/Explore";
 import WrongPage from "./Pages/WrongPage/WrongPage";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "./Pages/SignIn/SignIn";
+import ScrollToTop from "./Components/ScrollToTop";
 
 // const options = {
 //   method: "GET",
@@ -132,6 +133,7 @@ function App() {
   return (
     <UserContext.Provider value={user}>
       <BrowserRouter>
+        <ScrollToTop />
         <Switch>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/aboutus" element={<AboutUs />}></Route>

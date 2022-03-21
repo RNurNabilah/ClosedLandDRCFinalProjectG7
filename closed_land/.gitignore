@@ -2,6 +2,10 @@
 
 # dependencies
 /node_modules
+closed_land/Frontend/node_modules/
+closed_land/Frontend/node_modules/.cache/default-development/0.pack
+closed_land/Frontend/node_modules/.cache/default-development/10.pack
+closed_land/Frontend/node_modules/.cache/default-development/11.pack
 /.pnp
 .pnp.js
 

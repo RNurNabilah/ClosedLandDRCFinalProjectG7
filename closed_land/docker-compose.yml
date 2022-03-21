@@ -1,0 +1,202 @@
+version: "3.8"
+services:
+  # REACT Container
+  react:
+    build: ./Frontend
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/closed_land/Frontend/reactVol:/data
+    ports:
+      - "7777:3000"
+    image: 36fad710e29d
+    command: npm start
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.2
+
+  # Sniffer
+  collectionSniffer:
+    build: ./Backend
+    ports:
+      - "4560:4560"
+    image: 36fad710e29d
+    #run:
+    command: node apiCollection.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
+
+  # Explore Trending Service
+  exploreTrending:
+    build: ./Backend
+    ports:
+      - "4561:4561"
+    image: 36fad710e29d
+    command: node apiExploreTrending.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
+
+  # Explore 24 hour Service
+  explore24hourtrending:
+    build: ./Backend
+    ports:
+      - "4562:4562"
+    image: 36fad710e29d
+    command: node apiExplore24hour.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.5
+
+  # Explore 7 day Service
+  explore7daytrending:
+    build: ./Backend
+    ports:
+      - "4563:4563"
+    image: 36fad710e29d
+    command: node apiExplore7day.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
+
+  # Explore 30 day Service
+  explore30daytrending:
+    build: ./Backend
+    ports:
+      - "4564:4564"
+    image: 36fad710e29d
+    command: node apiExplore30day.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.7
+
+  # Explore Latest Service
+  explorelatesttrending:
+    build: ./Backend
+    ports:
+      - "4565:4565"
+    image: 36fad710e29d
+    command: node apiExploreLatest.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.8
+
+  # # Stats Collection
+  # statsCollection:
+  #   build: ./Backend
+  #   ports:
+  #     - "4566:4566"
+  #   image: 36fad710e29d
+  #   command: node apiStatsCollection.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.9
+
+  # # Stats Volume
+  # statsVolume:
+  #   build: ./Backend
+  #   ports:
+  #     - "4567:4567"
+  #   image: 36fad710e29d
+  #   command: node apiStatsVolume.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.10
+
+  # # Stats 24hour change
+  # stats24hourchange:
+  #   build: ./Backend
+  #   ports:
+  #     - "4568:4568"
+  #   image: 36fad710e29d
+  #   command: node apiStats24hourchg.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.11
+
+  # # Stats 7day change
+  # stats7daychange:
+  #   build: ./Backend
+  #   ports:
+  #     - "4569:4569"
+  #   image: 36fad710e29d
+  #   command: node apiStats7daychg.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.12
+
+  # # Stats Floor Price
+  # statsFloorPrice:
+  #   build: ./Backend
+  #   ports:
+  #     - "4570:4570"
+  #   image: 36fad710e29d
+  #   command: node apiStatsFloorPrice.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.13
+
+  # # Stats Owners
+  # statsOwners:
+  #   build: ./Backend
+  #   ports:
+  #     - "4571:4571"
+  #   image: 36fad710e29d
+  #   command: node apiStatsOwners.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.14
+
+  # # Stats Items
+  # statsItems:
+  #   build: ./Backend
+  #   ports:
+  #     - "4572:4572"
+  #   image: 36fad710e29d
+  #   command: node apiStatsItems.js
+  #   #restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.20
+
+  # Search
+  search:
+    build: ./Backend
+    ports:
+      - "4573:4573"
+    image: 36fad710e29d
+    command: node apiSearch.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.21
+
+  #Redis
+  redis:
+    image: redis:latest
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/closed_land/Backend/redisVol:/data
+    ports:
+      - "6369:6379"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.15
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1

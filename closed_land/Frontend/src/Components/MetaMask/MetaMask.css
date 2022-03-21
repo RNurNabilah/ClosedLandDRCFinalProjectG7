@@ -1,0 +1,36 @@
+.wallet-reload {
+  margin-top: 1rem !important;
+  text-align: center !important;
+  width: 10rem !important;
+  /* height: 4vh; */
+  border: 20px !important;
+  background-color: #f8c101 !important;
+  color: black !important;
+  font-family: "Sora";
+  font-weight: 600 !important;
+}
+
+.wallet-reload:hover {
+  background-color: black !important;
+  color: #f8c101 !important;
+}
+
+.wallet-reload:focus {
+  box-shadow: 0 0 0 0.25rem rgb(248, 193, 1, 0.5) !important;
+}
+
+.metaMaskDiv {
+  text-align: center !important;
+  /* height: 4vh; */
+  border: 1px solid #f8c101 !important;
+  background-color: black !important;
+  color: #f8c101;
+  font-family: "Sora";
+  font-weight: 600 !important;
+  padding: 1rem;
+  overflow-wrap: break-word;
+}
+
+.metaMaskData {
+  color: #e6347e;
+}

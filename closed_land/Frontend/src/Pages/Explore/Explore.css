@@ -1,0 +1,298 @@
+.explore {
+  background-color: #14a09a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='450' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.h1Row > h1 {
+  text-align: center;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: calc(22px + 2vmin) !important;
+  color: white !important;
+}
+
+.card-text {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  line-height: 1.5em;
+  height: 3em; /* height is 2x line-height, so two lines will display */
+  overflow: hidden;
+  text-align: center;
+}
+
+.card-img-top {
+  height: 10rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  padding: 0;
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.h5 {
+  margin-top: 0.5rem !important;
+  font-size: calc(8px + 2vmin) !important;
+  text-align: center;
+  font-family: "Sora";
+  font-weight: 800 !important;
+}
+
+.card-text {
+  font-family: "Lato";
+  font-weight: 400;
+  text-align: center;
+  font-size: calc(3px + 2vmin);
+}
+
+.exploreButton {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: calc(4px + 2vmin) !important;
+  font-weight: 600 !important;
+  padding: 0.3rem !important;
+}
+
+.exploreCardsRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
+/* .row > * {
+  padding: 0 !important;
+} */
+
+.card {
+  border: none !important;
+}
+
+.exploreCards {
+  width: 23rem !important;
+  background-color: #0f292f !important;
+  margin: 1rem !important;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 20px !important;
+  padding: 0, 1rem !important;
+}
+
+.exploreCards:hover {
+  transform: scale(1.05) !important;
+  transition: transform 1s !important;
+}
+
+.explorePFP {
+  display: flex;
+  position: float;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+  height: 5rem;
+  width: 5rem;
+  margin-top: -3rem !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  border: 3px solid #0f292f;
+}
+
+#explorePrices {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+.card-body {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .exploreCards {
+    width: 15rem !important;
+  }
+
+  .explorePFP {
+    margin-top: -4rem;
+  }
+
+  .card-body {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0 !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  #explorePrices {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}
+@media (min-width: 375px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+
+  .exploreCards {
+    width: 20rem !important;
+  }
+}
+
+@media (min-width: 425px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+
+  .explorePFP {
+    height: 7rem;
+    width: 7rem;
+    margin-top: -5rem !important;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+
+  .explorePFP {
+    height: 8rem;
+    width: 8rem;
+    margin-top: -5rem !important;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .exploreButton {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .explorePFP {
+    margin-top: -5rem !important;
+  }
+}
+
+@media (min-width: 700px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .explore {
+    padding: 10rem 0 10rem 0;
+  }
+  .explorePFP {
+    margin-top: -5rem !important;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  .exploreButton {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .explorePFP {
+    height: 8rem;
+    width: 8rem;
+    margin-top: -5rem !important;
+  }
+}
+@media (min-width: 1024px) {
+  /* big landscape tablets, laptops, and desktops */
+  .exploreCards {
+    width: 25vw !important;
+  }
+  .explorePFP {
+    height: 7rem;
+    width: 7rem;
+    margin-top: -4rem !important;
+  }
+
+  .h1Row > h1 {
+    font-size: calc(50px + 1vmin) !important;
+  }
+
+  .h5 {
+    font-size: calc(10px + 1vmin) !important;
+  }
+
+  .card-text {
+    font-size: calc(5px + 1vmin) !important;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .exploreButton {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .explorePFP {
+    margin-top: -6rem !important;
+    height: 9rem;
+    width: 9rem;
+    border: 5px solid #0f292f;
+  }
+
+  /* .h1Row > h1 {
+  } */
+
+  .card-body {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-img-top {
+    height: 25vh !important;
+  }
+}
+
+@media (min-width: 2000px) {
+  /* hi-res laptops and desktops */
+  .explorePFP {
+    margin-top: -7.5rem !important;
+    height: 11rem;
+    width: 11rem;
+    border: 8px solid #0f292f;
+  }
+}
+
+@media (min-width: 2560px) {
+  /* hi-res laptops and desktops */
+  .exploreButton {
+    padding: 2rem !important;
+  }
+  .explorePFP {
+    margin-top: -10rem !important;
+    height: 15rem;
+    width: 15rem;
+    border: 8px solid #0f292f;
+  }
+
+  .card-body {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

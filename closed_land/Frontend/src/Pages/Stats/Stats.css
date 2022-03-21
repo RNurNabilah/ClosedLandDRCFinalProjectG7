@@ -1,0 +1,489 @@
+.statsPage {
+  position: relative;
+  background-color: #501f3a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23491833' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0 4rem 0;
+}
+
+.statsPageLaptop {
+  position: relative;
+  background-color: #501f3a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23491833' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 0 8rem 0;
+}
+
+.statsTitle {
+  background-color: #14a098;
+  width: 90% !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #14a098;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin: 1rem;
+}
+
+.statsTitleLaptop {
+  background-color: #14a098;
+  width: 80% !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #14a098;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.statsTitle > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
+  color: black !important;
+}
+
+.statsTitleLaptop > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
+  color: black !important;
+  font-size: calc(30px + 2vmin) !important;
+}
+
+.statsTitleLaptop > .row > h2 {
+  font-family: "Sora";
+  font-weight: 400;
+  color: black !important;
+  font-size: calc(10px + 2vmin) !important;
+}
+
+.statsTitle > .row > h2 {
+  font-family: "Sora";
+  font-weight: 400;
+  font-size: calc(8px + 2vmin) !important;
+}
+
+.toggleStats {
+  width: 90%;
+  z-index: 100 !important;
+}
+
+.statsButtonGroup {
+  /* background-color: #cb2d6f !important; */
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  margin-right: 0;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+.statsButtonCol {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsButton {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: calc(10px + 1vmin) !important;
+  font-weight: 400 !important;
+  text-align: center;
+}
+
+.statsButtonFloor {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: calc(10px + 1vmin) !important;
+  font-weight: 400 !important;
+  text-align: center;
+  width: 9rem !important;
+}
+
+.statsButtonEmpty {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  margin: 1rem;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#dropdown-basic {
+  background-color: #66fcf1 !important;
+  border-color: transparent !important;
+  font-family: "Sora";
+  font-weight: 600;
+  font-size: calc(10px + 2vmin) !important;
+  color: black;
+}
+
+.dropdown-menu {
+  font-family: "Sora";
+}
+
+.statsPageTable {
+  margin-top: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw !important;
+  /* padding: 0 !important; */
+}
+
+.statsPageTableLaptop {
+  margin-top: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90vw !important;
+  /* padding: 0 !important; */
+}
+
+.statsTableRow {
+  margin: 1rem;
+  background-color: #cb2d6f !important;
+  /* height: 12vh; */
+  /* width: 100vw; */
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  border-radius: 20px;
+  padding: 0.2rem;
+}
+
+.statsTableRow:hover {
+  transform: scale(1.02) !important;
+  transition: transform 0.5s !important;
+}
+
+.statsTableRowLaptop {
+  margin: 1rem;
+  background-color: #cb2d6f !important;
+  /* height: 12vh; */
+  /* width: 100vw;   */
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  margin-right: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
+}
+
+.statsTableRowLaptop:hover {
+  transform: scale(1.02) !important;
+  background-color: #aa3264 !important;
+  transition: transform 0.5s !important;
+}
+
+.statsTableText {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.statsTableTextLaptop {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#sNum {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem !important;
+}
+
+#statsNumRow > #sNum > h1 {
+  font-family: "Sora";
+  font-weight: 800;
+  color: black !important;
+  font-size: calc(10px + 2vmin) !important;
+  text-align: center;
+  margin: 0;
+}
+
+#sNumLaptop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#statsNumRow > #sNumLaptop > h1 {
+  font-family: "Sora";
+  font-weight: 800;
+  color: black !important;
+  font-size: calc(4px + 2vmin) !important;
+  text-align: center;
+  margin: 0;
+}
+
+.statsRowImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statsRowImageLaptop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.statsTableImage {
+  border-radius: 50%;
+  width: 4.5rem;
+}
+
+.statsTableImageLaptop {
+  border-radius: 50%;
+  width: 5rem;
+  margin-left: 0.8rem;
+}
+
+.statsRowName {
+  font-family: "Sora";
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: black !important;
+  padding-left: 0.5rem;
+}
+
+.statsRowNameLaptop {
+  font-family: "Sora";
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: black !important;
+  padding-left: 0.5rem;
+}
+
+.statsRowName > #statsName {
+  justify-content: end;
+  margin: 0;
+  inline-size: 7rem;
+  font-size: calc(6px + 2vmin) !important;
+}
+
+.statsRowNameLaptop > #statsNameLaptop {
+  margin: 0;
+  inline-size: 10rem;
+  font-size: calc(8px + 1vmin) !important;
+  margin-left: 1rem;
+}
+
+.statsRowName > #statsFloorPrice {
+  text-align: justify;
+  justify-content: end;
+  margin: 0;
+}
+
+.statsRowName > Button {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  text-align: left;
+  padding: 0;
+  font-size: calc(5px + 2vmin) !important;
+}
+
+.statsRowName > Button:focus,
+Button:hover {
+  outline: 0 !important;
+  box-shadow: none;
+  background-color: transparent !important;
+  border: none;
+}
+
+.rowStatsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  font-family: "Lato";
+  margin-right: 0.5rem !important;
+  font-size: calc(5px + 2vmin) !important;
+}
+
+.rowStatsPageLaptop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  font-family: "Lato";
+  font-size: calc(7px + 1vmin) !important;
+}
+
+.rowStatsPageLaptop > p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.rowStatsPage > p {
+  margin: 0;
+  font-weight: 700;
+}
+
+#total_volume {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.moreStatsRow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.statsRowLine {
+  height: 0px;
+  border: 1px solid #642121;
+  margin-top: 1rem !important;
+  width: 80vw !important;
+}
+
+.moreStats {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem !important;
+  font-size: calc(5px + 2vmin) !important;
+}
+
+.moreStatsHeader {
+  font-family: "Sora";
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+.moreStatsNum {
+  font-family: "Lato";
+  color: black;
+  font-weight: 600;
+  margin: 0.5rem;
+}
+
+.eth {
+  margin-bottom: 0.3rem;
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .row > * {
+    padding: 0 !important;
+  }
+  .statsPageLaptop {
+    display: none;
+  }
+}
+
+@media (min-width: 425px) {
+  .statsRowName > #statsName {
+    inline-size: 12rem;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .statsPage {
+    padding: 6rem 0 6rem 0;
+  }
+
+  .statsRowName > #statsName {
+    inline-size: 20rem !important;
+  }
+  .statsTableImage {
+    width: 8rem;
+  }
+
+  .statsTableRow {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .statsTableRow {
+    padding: 1rem;
+  }
+
+  .statsTableImage {
+    padding: 0 1rem 0 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  /* big landscape tablets, laptops, and desktops */
+  .statsPage {
+    display: none;
+  }
+  .statsPageLaptop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .statsRowNameLaptop > #statsNameLaptop {
+    inline-size: 16rem !important;
+     font-size: calc(12px + 1vmin) !important;
+  }
+
+  .rowStatsPageLaptop {
+    font-size: calc(10px + 1vmin) !important;
+  }
+
+  .statsTableImageLaptop {
+    width: 6rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .statsPageLaptop {
+    min-height: 80vh;
+  }
+}

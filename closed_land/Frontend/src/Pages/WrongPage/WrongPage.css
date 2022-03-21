@@ -1,0 +1,43 @@
+.wrongPage {
+  background-color: #370c1e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23e6347e' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23c31b56' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23da2a87' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b71660' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23ce1f90' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23ab106a' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23c21598' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23a00b74' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23b60aa1' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%2394057e' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrongPage > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: calc(20px + 2vmin);
+  color: #e6347e;
+}
+
+.wrongPage > img {
+  width: 25vw !important;
+  margin-top: -3rem;
+}
+
+.fourOfour {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: calc(40px + 2vmin) !important;
+  color: #e6347e;
+  margin-bottom: 0 !important;
+}
+
+.wrongPageCube {
+  width: 20%;
+  height: 20%;
+}
+
+#h1Error {
+  margin-bottom: 12rem;
+}

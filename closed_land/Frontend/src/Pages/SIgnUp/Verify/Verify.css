@@ -1,0 +1,23 @@
+#verifyModal > .modal-content {
+  background-color: #0b0c10;
+  color: #f8af04;
+  border: 0.5px solid #f8af04;
+}
+
+#verifyModal > .modal-content > .modal-header > .h4 {
+  font-family: "Work Sans";
+  font-weight: 700 !important;
+}
+
+#verifyModal > .modal-content > .modal-body > p {
+  font-family: "Lato";
+  font-weight: 500 !important;
+  text-align: justify;
+}
+
+#verifyModal > .modal-content > .modal-footer > .btn {
+  background-color: #f8af04 !important;
+  border: none;
+  color: #0b0c10;
+  font-family: "Sora";
+}

@@ -1,0 +1,448 @@
+.emailFooter > .input-group > .form-control {
+  background-color: black;
+  color: #f8af04;
+  border-color: #f8af04;
+}
+
+.emailFooter > .input-group > .form-control:focus {
+  box-shadow: none !important;
+}
+
+.emailFooter > .input-group > #button-addon2 {
+  background-color: #f8af04;
+  border-color: #f8af04 !important;
+  color: black;
+  font-family: Sora;
+  font-weight: 700;
+}
+
+.emailFooter > .input-group > #button-addon2:focus {
+  box-shadow: none !important;
+}
+
+.emailFooter > .input-group > #button-addon2:hover {
+  background-color: #f5455c !important;
+  color: #fff;
+}
+
+.emailFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  width: 70vw;
+}
+
+.emailSocials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#footerH1Email {
+  color: #fff;
+  font-family: Sora;
+  font-weight: 700;
+  font-size: calc(10px + 2vmin) !important;
+  text-align: center;
+}
+
+#footerH3Email {
+  color: #fff;
+  font-family: Lato;
+  font-weight: 400;
+  font-size: calc(5px + 2vmin) !important;
+  text-align: center;
+}
+
+.right-container {
+  margin: 1rem;
+  width: 70vw;
+}
+
+.alltorow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  width: 80vw !important;
+}
+
+
+#footer-describe {
+  text-align: center;
+  color: #fff;
+  font-family: Lato;
+  font-size: calc(5px + 2vmin) !important;
+  /* height: auto; */
+}
+
+.footerIcons {
+  padding: 0.5rem;
+  /* background-color: #fff; */
+  border-radius: 10px;
+  color: #f8af04;
+  background-color: black;
+  border: 0.5px solid #f8af04;
+  margin: 0 0.5rem 0 0.5rem;
+}
+
+.footerIcons:hover {
+  transform: scale(1.5);
+  color: #ff677c;
+  border-color: #ff677c;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer-socmed {
+  text-align: center;
+  color: #fff;
+  font-size: calc(10px + 2vmin) !important;
+  font-family: Sora;
+  font-weight: 600;
+}
+
+.socmed-icon {
+  display: flex;
+  justify-content: center;
+  /* gap: 10px; */
+  align-items: center;
+  /* margin: 0.5rem; */
+  /* padding: 1rem; */
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.email-inputgroup {
+  padding: 1rem 2rem 1rem 2rem !important;
+}
+
+/* Kena buat display flex utk container */
+@media (max-width: 320px) {
+  /* .socmed-icon {
+    margin-left: 4rem !important;
+  } */
+
+  .footerIcons {
+    margin: 0 0.2rem 0 0.2rem;
+  }
+  
+
+  #ilogo {
+    /* display: grid;
+    align-items: center; */
+    margin: 0.5rem 0.5rem 0.5rem -0.5rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .contact-logo {
+    max-width: 18% !important;
+    max-height: 18% !important;
+    padding: 1;
+  }
+
+  #footer-describe {
+    text-align: center;
+    padding: 0.5rem 0 0 0;
+    font-family: Lato !important;
+  }
+
+  .contact-us {
+    /* padding-top: 0.5rem !important; */
+    padding-bottom: 1rem !important;
+  }
+
+  .twitter {
+    height: 13% !important;
+    width: 8% !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  #footer-describe {
+    text-align: center;
+  }
+
+  .contact-logo {
+    max-width: 18% !important;
+    max-height: 18% !important;
+    padding: 1;
+  }
+
+  .footer-text {
+    /* text-align: center; */
+    /* margin-right: auto; */
+  }
+
+  .contact-us {
+    padding-bottom: 1rem !important;
+  }
+
+  #ilogo {
+    /* display: grid;
+    align-items: center; */
+    margin: 0 1rem 0 -1rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 950px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+  }
+
+  .iconandname {
+    display: flex;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0 0.5rem 0 -0.5rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .footer-text {
+    margin: 0 !important;
+    padding: 2rem 0 2rem 0 !important;
+  }
+
+  .contact-logo {
+    margin: auto !important;
+    /* width: 3rem !important; */
+    max-width: 20% !important;
+    max-height: 20% !important;
+  }
+
+  .contact-us {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .alltorow-container {
+    flex-direction: row;
+    width: 100vw !important;
+    margin: 2rem 0 3rem 0 !important;
+  }
+
+  .emailSocials {
+    flex-direction: row;
+  }
+
+  .emailFooter {
+    width: 50vw !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  #footerH1Email {
+    text-align: left;
+  }
+
+  #footerH3Email {
+    text-align: left;
+    font-size: calc(8px + 1vmin) !important;
+  }
+
+  .right-container {
+    width: 50vw !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer-socmed {
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+
+  .socmed-icon {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .email-inputgroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5rem 0 5rem !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .iconandname {
+    display: flex;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0.5rem !important;
+    width: 6rem !important;
+    height: 6rem !important;
+  }
+
+  .footer-text {
+    margin-left: 0.5rem !important;
+  }
+
+  .contact-us {
+    font-size: 2rem;
+    /* padding-top: 15px; */
+    flex-direction: row;
+  }
+
+  .contact-logo {
+    max-width: 20% !important;
+    max-height: 20% !important;
+  }
+
+  .middle-container {
+  }
+
+  .cu {
+    font-size: 2rem;
+    /* padding: 15px; */
+  }
+
+  .footer-contact-number {
+    font-size: 2rem;
+  }
+}
+
+.iconandname {
+  /* max-width: 30% !important;
+  max-height: 30% !important;
+  align-items: center !important;
+  margin-left: auto;
+  margin-right: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-footer {
+  padding-top: 15px;
+  background: #0b0c10;
+  overflow: hidden;
+}
+
+.footer-text {
+  /* text-align: center;
+  margin-left: -0.7rem;
+  margin-right: auto; */
+  color: #fff;
+  font-weight: 800 !important;
+}
+
+#button-addon2 {
+  position: inherit;
+  z-index: 0;
+  background-color: #c4c4c4;
+}
+
+.fd {
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .contact-logo {
+  max-width: 10% !important;
+  max-height: 10% !important;
+} */
+
+.contact-us {
+  margin: 1rem;
+}
+
+.cu {
+  width: 200px;
+  color: #fff !important;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Sora;
+  font-weight: 600;
+  /* padding: 15px; */
+}
+
+.footer-contact-number {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  /* padding: 1rem 0 rem 0; */
+  font-family: Lato;
+}
+
+.discord {
+  height: 12% !important;
+  width: 7% !important;
+  /* background-color: #fff; */
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #5865f2;
+}
+
+.instagram {
+  height: 12% !important;
+  width: 6% !important;
+  /* background-color: #fff; */
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.youtube {
+  height: auto !important;
+  width: 7% !important;
+  padding: 0 !important;
+  /* background-color: #fff; */
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eb3223;
+}
+
+.rocketchat {
+  height: auto !important;
+  width: 8% !important;
+  /* background-color: #fff; */
+  border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f5455c;
+}
+
+.footer-trademark {
+  text-align: center;
+  color: #fff;
+  background-color: #312e81;
+}
+
+.footer-copyright {
+  margin-bottom: 0 !important;
+  background-color: #f5455c;
+  color: white;
+}
+
+/* a:hover {
+  text-decoration: none;
+  color: #66cfcf !important;
+} */

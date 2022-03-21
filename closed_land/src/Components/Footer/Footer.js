@@ -52,28 +52,6 @@ const Footer = () => {
       });
     // set_sender_email("");
   };
-  // const form = React.useRef();
-
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
-
-  //   emailjs
-  //     .sendForm(
-  //       "service_q7gksxc",
-  //       "template_edogtjl",
-  //       form.current,
-  //       "D-ltMhhZjgNMmY9Zs"
-  //     )
-  //     .then(
-  //       (result) => {
-  //         console.log(result.text);
-  //       },
-  //       (error) => {
-  //         console.log(error.text);
-  //       }
-  //     );
-  //   // e.target.reset();
-  // };
 
   return (
     <div className="main-footer">
